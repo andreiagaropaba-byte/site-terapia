@@ -60,15 +60,27 @@
             scroll-behavior: smooth;
         }
 
-        /* ESTILOS DO QUIZ INTERATIVO */
+        /* ESTILOS DO QUIZ INTERATIVO COM DESTAQUE PREMIUM */
         .quiz-section {
-            background-color: #fdfbf7;
-            padding: 50px 20px;
+            background: linear-gradient(180deg, #fbf7f0 0%, #f4ede2 100%);
+            padding: 60px 24px;
             font-family: inherit;
             color: #333;
-            border-radius: 16px;
-            margin-top: 40px;
-            border: 1px solid #e0d8c8;
+            border-radius: 24px;
+            margin-top: 60px;
+            border: 1px solid #e2d7c5;
+            box-shadow: 0 20px 50px -10px rgba(196, 166, 107, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .quiz-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #C4A66B 0%, #E8DCCB 50%, #C4A66B 100%);
         }
         .quiz-container {
             max-width: 680px;
@@ -76,36 +88,46 @@
             text-align: center;
         }
         .quiz-badge {
+            display: inline-block;
             font-size: 11px;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: #C4A66B;
             font-weight: 700;
+            background: #ffffff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid #e0d5c1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-bottom: 12px;
         }
         .quiz-title {
-            font-size: 24px;
+            font-size: 28px;
             margin: 12px 0;
             color: #2C2C2C;
             font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
         }
         .quiz-subtitle {
-            font-size: 14px;
+            font-size: 15px;
             color: #666;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
         .quiz-card {
             background: #ffffff;
-            border: 1px solid #eae3d2;
-            border-radius: 12px;
-            padding: 25px 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #e8e0d0;
+            border-radius: 16px;
+            padding: 32px 24px;
+            box-shadow: 0 15px 35px rgba(44, 44, 44, 0.06);
             text-align: left;
         }
         .quiz-progress-bar {
             background: #f0ebe1;
             height: 6px;
             border-radius: 3px;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             overflow: hidden;
         }
         .quiz-progress-fill {
@@ -117,36 +139,41 @@
             font-size: 12px;
             color: #888;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .quiz-question {
-            font-size: 17px;
-            color: #222;
-            margin: 15px 0 20px 0;
+            font-size: 18px;
+            color: #2C2C2C;
+            margin: 16px 0 22px 0;
             font-weight: 600;
+            line-height: 1.4;
         }
         .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
         .quiz-btn {
             background: #faf8f5;
-            border: 1px solid #e0d8c8;
-            padding: 12px 16px;
-            border-radius: 8px;
+            border: 1px solid #e5dcce;
+            padding: 14px 18px;
+            border-radius: 10px;
             text-align: left;
             font-size: 14px;
             color: #333;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
+            font-weight: 400;
         }
         .quiz-btn:hover {
             background: #C4A66B;
             color: #ffffff;
             border-color: #C4A66B;
+            transform: translateX(4px);
         }
         .quiz-form-group {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             text-align: left;
         }
         .quiz-form-group label {
@@ -154,64 +181,74 @@
             font-size: 13px;
             font-weight: 600;
             color: #444;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
         .quiz-form-group input {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            padding: 12px 16px;
+            border: 1px solid #dcd3c3;
+            border-radius: 8px;
             font-size: 14px;
             box-sizing: border-box;
+            background-color: #fdfcf9;
+        }
+        .quiz-form-group input:focus {
+            outline: none;
+            border-color: #C4A66B;
+            background-color: #ffffff;
         }
         .quiz-result {
             text-align: center;
         }
         .quiz-result h3 {
-            font-size: 20px;
+            font-size: 22px;
             color: #2C2C2C;
             margin-bottom: 12px;
             font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
         }
         .quiz-result p {
             font-size: 14px;
             color: #555;
             line-height: 1.6;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         .quiz-cta-btn {
             display: inline-block;
             background-color: #25d366;
             color: #ffffff !important;
             text-decoration: none;
-            padding: 14px 24px;
+            padding: 16px 28px;
             font-weight: 700;
             border-radius: 30px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+            transition: all 0.25s ease;
             width: 100%;
+            letter-spacing: 0.5px;
         }
         .quiz-cta-btn:hover {
-            transform: scale(1.02);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
         }
         .quiz-insta-btn {
             display: inline-block;
             background-color: #e1306c;
             color: #ffffff !important;
             text-decoration: none;
-            padding: 14px 24px;
+            padding: 14px 28px;
             font-weight: 700;
             border-radius: 30px;
             transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
         }
     </style>
 </head>
 <body class="bg-brand-offWhite text-brand-graphite font-sans antialiased selection:bg-brand-champagne">
 
     <div class="bg-brand-graphite text-brand-offWhite text-xs py-3.5 px-4 text-center font-sub uppercase tracking-widest border-b border-brand-gold/20 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
-        🔒 Atendimento 100% Online, Seguro e Sob Estrito Sigilo Profissional.
+        🔒 Atendimento Particular 100% Online, Seguro e Sob Estrito Sigilo Profissional.
     </div>
 
     <nav class="bg-white/95 backdrop-blur-md border-b border-brand-champagne shadow-sm sticky top-[49px] z-40 transition-all duration-300">
@@ -236,7 +273,7 @@
                 <a href="#para-quem" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Público</a>
                 <a href="#tratamentos" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Como Posso Ajudar</a>
                 <a href="#sobre" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Sobre</a>
-                <a href="https://wa.me/5511952182049" target="_blank" class="bg-brand-gold hover:bg-brand-graphite text-brand-offWhite px-6 py-3 rounded transition-all duration-300 shadow-premium uppercase tracking-widest text-[10px]">Agendar</a>
+                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="bg-brand-gold hover:bg-brand-graphite text-brand-offWhite px-6 py-3 rounded transition-all duration-300 shadow-premium uppercase tracking-widest text-[10px]">Agendar Consulta</a>
             </div>
         </div>
     </nav>
@@ -258,10 +295,10 @@
             </div>
 
             <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                <a href="https://wa.me/5511952182049" target="_blank" class="w-full sm:w-auto bg-brand-graphite hover:bg-brand-gold text-brand-offWhite text-center font-sub font-medium tracking-widest uppercase text-xs px-8 py-4 rounded shadow-premium hover:shadow-floating transition-all duration-300 transform hover:-translate-y-0.5">
-                    💬 Clique aqui e fale comigo
+                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="w-full sm:w-auto bg-brand-graphite hover:bg-brand-gold text-brand-offWhite text-center font-sub font-medium tracking-widest uppercase text-xs px-8 py-4 rounded shadow-premium hover:shadow-floating transition-all duration-300 transform hover:-translate-y-0.5">
+                    💬 Agendar Consulta Particular
                 </a>
-                <span class="font-sub text-[10px] tracking-wider text-brand-taupe max-w-[200px] text-center sm:text-left uppercase font-medium">Fale de forma estritamente privada.</span>
+                <span class="font-sub text-[10px] tracking-wider text-brand-taupe max-w-[200px] text-center sm:text-left uppercase font-medium">Atendimento individual e exclusivo.</span>
             </div>
         </div>
 
@@ -393,12 +430,12 @@
             </div>
         </div>
 
-        <!-- ================= QUIZ DE SEXOLOGIA (INSERIDO AQUI) ================= -->
+        <!-- ================= QUIZ DE SEXOLOGIA (COM VISUAL DESTACADO E CHAMATIVO) ================= -->
         <div id="quiz-intimo" class="quiz-section">
             <div class="quiz-container">
-                <span class="quiz-badge">AVALIAÇÃO RÁPIDA E PRIVADA</span>
-                <h2 class="quiz-title">Descubra se a Sexologia Prática é ideal para o seu momento</h2>
-                <p class="quiz-subtitle">Responda a 5 perguntas rápidas (1 minuto) para filtrar sua demanda e agendar sua conversa inicial de 20 minutos.</p>
+                <span class="quiz-badge">✦ TRIAGEM PARA ATENDIMENTO PARTICULAR ✦</span>
+                <h2 class="quiz-title">Descubra se o acompanhamento em Sexologia Prática é ideal para você</h2>
+                <p class="quiz-subtitle">Responda a 5 perguntas rápidas (1 minuto) para verificar a disponibilidade de agenda e solicitar seu agendamento.</p>
 
                 <div id="quiz-card" class="quiz-card">
                     <div class="quiz-progress-bar">
@@ -427,7 +464,7 @@
     </section>
 
     <!-- Botão de WhatsApp Flutuante no Canto da Tela -->
-    <a href="https://wa.me/5511952182049?text=Ol%C3%A1%2C%20Andr%C3%A9ia!%20Estou%20no%20seu%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20o%20atendimento%20em%20Sexologia." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center">
+    <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center">
         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
         </svg>
@@ -441,35 +478,36 @@
                     { text: "A) Resgatar meu desejo e libido de forma prática no dia a dia.", score: 'A' },
                     { text: "B) Destravar inseguranças, ansiedade de desempenho e bloqueios na hora H.", score: 'A' },
                     { text: "C) Melhorar a sintonia, o diálogo e a cumplicidade a dois.", score: 'A' },
-                    { text: "D) Entender questões pontuais sobre meu corpo ou sexualidade.", score: 'B' }
+                    { text: "D) Entender questões pontuais sobre meu corpo ou sexualidade.", score: 'B' },
+                    { text: "E) Outros", score: 'A' }
                 ]
             },
             {
                 q: "Quando você pensa em resolver esse impasse, o que faz mais sentido para o seu momento?",
                 options: [
                     { text: "A) Um acompanhamento direto e focado em soluções, com ferramentas e exercícios práticos.", score: 'A' },
-                    { text: "B) Tratamentos tradicionais e investigativos de longo prazo.", score: 'B' }
+                    { text: "B) Apenas tirar dúvidas esporádicas de forma gratuita pela internet.", score: 'B' }
                 ]
             },
             {
                 q: "Quanto do seu bem-estar, autoestima ou conexão a dois você está perdendo por não ter um plano prático de ação?",
                 options: [
                     { text: "A) Muito! Quero ferramentas objetivas para mudar essa realidade o quanto antes.", score: 'A' },
-                    { text: "B) Regular. Estou incomodado(a), mas ainda vou levando no meu tempo.", score: 'B' }
+                    { text: "B) Pouco. Estou incomodado(a), mas ainda vou levando no meu tempo.", score: 'B' }
                 ]
             },
             {
-                q: "Você está disposto(a) a colocar em prática orientações técnicas e dinâmicas personalizadas para resgatar sua vida sexual?",
+                q: "Você está disposto(a) a se dedicar ao processo com exercícios e dinâmicas personalizadas para resgatar sua vida sexual?",
                 options: [
                     { text: "A) Sim! Quero um método prático e estou pronto(a) para me dedicar ao processo.", score: 'A' },
-                    { text: "B) Não tenho disponibilidade ou interesse em fazer exercícios/práticas no momento.", score: 'B' }
+                    { text: "B) Não tenho disponibilidade ou interesse em colocar em prática no momento.", score: 'B' }
                 ]
             },
             {
-                q: "Quer conversar comigo em um bate-papo privado de 20 minutos (sem custo) para eu entender seu caso e mostrar como as ferramentas práticas da Sexologia se aplicam à sua história?",
+                q: "O atendimento em Sexologia é realizado de forma 100% individual, privada e particular (pago). Você deseja verificar o valor das sessões e os horários disponíveis?",
                 options: [
-                    { text: "A) Sim! Quero agendar esses 20 minutos no WhatsApp nas próximas 24h/48h.", score: 'A' },
-                    { text: "B) Prefiro continuar apenas acompanhando conteúdos no Instagram por enquanto.", score: 'B' }
+                    { text: "A) Sim! Estou ciente de que é um serviço particular e quero verificar a agenda de consultas.", score: 'A' },
+                    { text: "B) No momento não estou buscando um atendimento pago, apenas conteúdos no Instagram.", score: 'B' }
                 ]
             }
         ];
@@ -511,13 +549,14 @@
             const container = document.getElementById('quiz-step-container');
             document.getElementById('quiz-step').style.display = 'none';
 
-            const isQualified = userScores[4] === 'A' && userScores.filter(s => s === 'A').length >= 3;
+            // Requisito estrito: Pergunta 5 (confirmação do investimento) precisa ser 'A' + maioria de respostas 'A'
+            const isQualified = userScores[4] === 'A' && userScores.filter(s => s === 'A').length >= 4;
 
             if (isQualified) {
                 container.innerHTML = `
                     <div class="quiz-result">
-                        <h3>Sua avaliação indica perfil ideal para o acompanhamento prático!</h3>
-                        <p>Preencha seus dados abaixo para abrir o WhatsApp e confirmar o agendamento do seu bate-papo inicial de 20 minutos (sem custo):</p>
+                        <h3>Perfil apto para agendamento de consulta particular!</h3>
+                        <p>Preencha seus dados para conectar diretamente ao WhatsApp e receber os horários disponíveis e valores da sessão:</p>
                         
                         <div class="quiz-form-group">
                             <label for="user-name">Nome Completo:</label>
@@ -528,15 +567,15 @@
                             <input type="tel" id="user-phone" placeholder="(11) 99999-9999">
                         </div>
 
-                        <button onclick="sendToWhatsapp()" class="quiz-cta-btn">💬 AGENDAR CONVERSA DE 20 MIN NO WHATSAPP</button>
+                        <button onclick="sendToWhatsapp()" class="quiz-cta-btn">💬 SOLICITAR AGENDAMENTO DE CONSULTA</button>
                     </div>
                 `;
             } else {
                 container.innerHTML = `
                     <div class="quiz-result">
                         <h3>Obrigada por responder!</h3>
-                        <p>No seu momento atual, o melhor caminho é acompanhar orientações e conteúdos diários para se conectar com o tema no seu ritmo.</p>
-                        <a href="https://www.instagram.com/andreiacardososexologia?utm_source=qr" target="_blank" class="quiz-insta-btn">📸 SEGUIR NO INSTAGRAM</a>
+                        <p>No seu momento atual, o melhor caminho é acompanhar orientações e conteúdos diários gratuitos no perfil do Instagram para se conectar com o tema no seu ritmo.</p>
+                        <a href="https://instagram.com" target="_blank" class="quiz-insta-btn">📸 SEGUIR NO INSTAGRAM</a>
                     </div>
                 `;
             }
@@ -551,7 +590,7 @@
                 return;
             }
 
-            const textMsg = `Olá, Andréia! Concluí o teste no seu site e quero agendar minha conversa gratuita de 20 minutos.\n\nNome: ${name}\nTelefone de contato: ${phone}`;
+            const textMsg = `Olá, Andréia! Fiz a triagem no seu site e gostaria de verificar os valores e horários disponíveis para agendar uma consulta particular.\n\nNome: ${name}\nTelefone: ${phone}`;
             const whatsappUrl = `https://api.whatsapp.com/send?phone=5511952182049&text=${encodeURIComponent(textMsg)}`;
             
             window.open(whatsappUrl, '_blank');
@@ -563,4 +602,3 @@
     </script>
 </body>
 </html>
-
