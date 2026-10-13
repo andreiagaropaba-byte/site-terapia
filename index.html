@@ -60,16 +60,16 @@
             scroll-behavior: smooth;
         }
 
-        /* ANIMAÇÃO E ESTILO DO BOTÃO FLUTUANTE DE WHATSAPP ALINHADO À MARCA */
-        @keyframes pulse-soft {
+        /* BOTÃO FLUTUANTE DE WHATSAPP HARMONIZADO COM A PALETA DA MARCA */
+        @keyframes pulse-gold {
             0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+                box-shadow: 0 0 0 0 rgba(196, 166, 107, 0.4);
             }
             70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 14px rgba(196, 166, 107, 0);
             }
             100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 0 rgba(196, 166, 107, 0);
             }
         }
         .whatsapp-float-container {
@@ -84,7 +84,7 @@
         .whatsapp-tooltip {
             background-color: #ffffff;
             color: #2C2C2C;
-            padding: 8px 14px;
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 12px;
             font-family: 'Montserrat', sans-serif;
@@ -102,21 +102,24 @@
             transform: translateX(0);
         }
         .whatsapp-btn {
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-            color: white;
-            width: 60px;
-            height: 60px;
+            background-color: #2C2C2C;
+            color: #C4A66B;
+            width: 58px;
+            height: 58px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            border: 1.5px solid #C4A66B;
+            box-shadow: 0 10px 25px rgba(44, 44, 44, 0.15);
             transition: all 0.3s ease;
-            animation: pulse-soft 2.5s infinite;
+            animation: pulse-gold 2.5s infinite;
         }
         .whatsapp-btn:hover {
+            background-color: #C4A66B;
+            color: #2C2C2C;
             transform: scale(1.08);
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+            border-color: #2C2C2C;
         }
 
         /* ESTILOS DO QUIZ INTERATIVO COM PALETA DA MARCA */
@@ -377,7 +380,7 @@
     <div class="px-6">
         <div id="quiz-intimo" class="quiz-section">
             <div class="quiz-container">
-                <span class="quiz-badge">✦ AVALIAÇÃO PARA TERAPIA PARTICULAR ✦</span>
+                <span class="quiz-badge">✦ AVALIAÇÃO ✦</span>
                 <h2 class="quiz-title">A Terapia Sexual é ideal para o seu momento?</h2>
                 <p class="quiz-subtitle">O processo terapêutico exige comprometimento, dedicação mútua e investimento financeiro. Responda às 5 perguntas abaixo para verificar se o seu perfil é compatível.</p>
 
@@ -555,11 +558,11 @@
     </footer>
     <!-- ================= FIM DO RODAPÉ ================= -->
 
-    <!-- Botão de WhatsApp Flutuante Aprimorado com Tooltip e Animação -->
+    <!-- Botão de WhatsApp Flutuante Harmonizado (Grafite com Dourado) -->
     <div class="whatsapp-float-container">
         <div class="whatsapp-tooltip">Fale comigo no WhatsApp</div>
         <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="whatsapp-btn" aria-label="Falar no WhatsApp">
-            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
             </svg>
         </a>
@@ -574,7 +577,7 @@
                     { text: "B) Destravar inseguranças, ansiedade de desempenho e bloqueios na hora H.", score: 'A' },
                     { text: "C) Melhorar a sintonia, o diálogo e a cumplicidade a dois.", score: 'A' },
                     { text: "D) Entender questões pontuais sobre meu corpo ou sexualidade.", score: 'A' },
-                    { text: "E) Outros", score: 'B' }
+                    { text: "E) Outras necessidades e buscas íntimas.", score: 'A' }
                 ]
             },
             {
@@ -615,13 +618,15 @@
             const stepLabel = document.getElementById('quiz-step');
             const progressBar = document.getElementById('quiz-progress');
 
-            stepLabel.innerText = `Pergunta ${currentStep + 1} de${questions.length}`;
+            if (!container || !stepLabel || !progressBar) return;
+
+            stepLabel.innerText = `Pergunta ${currentStep + 1} de ${questions.length}`;
             progressBar.style.width = `${((currentStep + 1) / questions.length) * 100}%`;
 
             const currentQ = questions[currentStep];
             let html = `<div class="quiz-question">${currentQ.q}</div><div class="quiz-options">`;
 
-            currentQ.options.forEach((opt) => {
+            currentQ.options.forEach((opt, index) => {
                 html += `<button class="quiz-btn" onclick="selectOption('${opt.score}')">${opt.text}</button>`;
             });
 
@@ -629,7 +634,7 @@
             container.innerHTML = html;
         }
 
-        function selectOption(score) {
+        window.selectOption = function(score) {
             userScores.push(score);
             currentStep++;
 
@@ -642,9 +647,10 @@
 
         function showResult() {
             const container = document.getElementById('quiz-step-container');
-            document.getElementById('quiz-step').style.display = 'none';
+            const stepLabel = document.getElementById('quiz-step');
+            
+            if (stepLabel) stepLabel.style.display = 'none';
 
-            // O usuário precisa pontuar 'A' em todas as perguntas para desbloquear o bate-papo
             const isQualified = userScores.every(s => s === 'A');
 
             if (isQualified) {
@@ -656,4 +662,50 @@
                         
                         <div class="quiz-form-group">
                             <label for="user-name">Nome Completo:</label>
-                            <input type="text" id="user-
+                            <input type="text" id="user-name" placeholder="Digite seu nome">
+                        </div>
+                        <div class="quiz-form-group">
+                            <label for="user-phone">Telefone / WhatsApp (com DDD):</label>
+                            <input type="tel" id="user-phone" placeholder="(11) 99999-9999">
+                        </div>
+
+                        <button onclick="sendToWhatsapp()" class="quiz-cta-btn">💬 AGENDAR MEU BATE-PAPO DE 20 MINUTOS</button>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="quiz-result">
+                        <h3>Obrigada por responder à nossa avaliação!</h3>
+                        <p>Pelas suas respostas, percebemos que no momento atual você busca conteúdos informativos ou formatos diferentes do atendimento clínico particular. O melhor caminho para você continuar evoluindo no seu ritmo é acompanhar as orientações diárias no Instagram.</p>
+                        <a href="https://instagram.com" target="_blank" class="quiz-insta-btn">📸 SEGUIR NO INSTAGRAM</a>
+                    </div>
+                `;
+            }
+        }
+
+        window.sendToWhatsapp = function() {
+            const nameInput = document.getElementById('user-name');
+            const phoneInput = document.getElementById('user-phone');
+
+            if (!nameInput || !phoneInput) return;
+
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+
+            if (!name || !phone) {
+                alert("Por favor, preencha seu nome e telefone para prosseguir.");
+                return;
+            }
+
+            const textMsg = `Olá, Andréia! Gostaria de marcar um bate-papo de 20 min. gratuito para entender se a terapia sexual poderá me ajudar.\n\nNome: ${name}\nTelefone: ${phone}`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=5511952182049&text=${encodeURIComponent(textMsg)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            renderStep();
+        });
+    </script>
+</body>
+</html>
