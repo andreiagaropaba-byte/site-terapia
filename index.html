@@ -309,33 +309,35 @@
 </head>
 <body class="bg-brand-offWhite text-brand-graphite font-sans antialiased selection:bg-brand-champagne">
 
-    <div class="bg-brand-graphite text-brand-offWhite text-xs py-3.5 px-4 text-center font-sub uppercase tracking-widest border-b border-brand-gold/30 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+    <!-- BARRA DE AVISO SUPERIOR -->
+    <div class="bg-brand-graphite text-brand-offWhite text-xs py-3.5 px-4 text-center font-sub uppercase tracking-widest border-b border-brand-gold/30 sticky top-0 z-50">
         🔒 Atendimento Particular 100% Online, Seguro e Sob Estrito Sigilo Profissional.
     </div>
 
-    <nav class="bg-white/95 backdrop-blur-md border-b border-brand-champagne shadow-sm sticky top-[49px] z-40 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="bg-brand-graphite text-brand-offWhite border-b border-brand-gold/30 sticky top-[45px] z-40 transition-all duration-300 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-5 group cursor-pointer">
-                <div class="relative w-14 h-14 rounded-full border border-brand-gold flex items-center justify-center transition-all duration-700 bg-brand-champagne/20 p-1">
-                    <div class="absolute inset-[3px] border border-brand-gold/30 rounded-full"></div>
-                    <span class="font-serif text-xl font-medium text-brand-graphite tracking-tight group-hover:text-brand-gold transition-colors block italic mt-[-1px]">AC</span>
+                <div class="relative w-14 h-14 rounded-full border border-brand-gold flex items-center justify-center transition-all duration-700 bg-brand-gold/10 p-1">
+                    <div class="absolute inset-[3px] border border-brand-gold/40 rounded-full"></div>
+                    <span class="font-serif text-xl font-medium text-brand-offWhite tracking-tight group-hover:text-brand-gold transition-colors block italic mt-[-1px]">AC</span>
                 </div>
                 <div class="space-y-0.5">
-                    <span class="font-serif text-xl md:text-2xl tracking-wide text-brand-graphite block uppercase font-bold leading-none group-hover:text-brand-gold transition-colors duration-300">
+                    <span class="font-serif text-xl md:text-2xl tracking-wide text-brand-offWhite block uppercase font-bold leading-none group-hover:text-brand-gold transition-colors duration-300">
                         Andréia Cardoso
                     </span>
-                    <span class="font-sub text-[9px] md:text-[10px] tracking-[0.3em] text-brand-taupe block uppercase font-bold leading-none">
+                    <span class="font-sub text-[9px] md:text-[10px] tracking-[0.3em] text-brand-gold block uppercase font-bold leading-none">
                         Sexologia & Terapia Sexual
                     </span>
                 </div>
             </div>
 
             <div class="hidden md:flex items-center gap-8 font-sub text-[11px] tracking-widest uppercase font-semibold">
-                <a href="#abordagem" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Abordagem</a>
-                <a href="#para-quem" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Público</a>
-                <a href="#tratamentos" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Como Posso Ajudar</a>
-                <a href="#sobre" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Sobre</a>
-                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="bg-brand-gold hover:bg-brand-graphite text-brand-offWhite px-6 py-3 rounded transition-all duration-300 shadow-premium uppercase tracking-widest text-[10px]">Agendar Consulta</a>
+                <a href="#abordagem" class="text-brand-offWhite/80 hover:text-brand-gold transition-colors">Abordagem</a>
+                <a href="#para-quem" class="text-brand-offWhite/80 hover:text-brand-gold transition-colors">Público</a>
+                <a href="#tratamentos" class="text-brand-offWhite/80 hover:text-brand-gold transition-colors">Como Posso Ajudar</a>
+                <a href="#quiz-intimo" class="text-brand-offWhite/80 hover:text-brand-gold transition-colors">Avaliação</a>
+                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="bg-brand-gold hover:bg-white text-brand-graphite px-6 py-3 rounded transition-all duration-300 shadow-premium uppercase tracking-widest text-[10px] font-bold">Falar no WhatsApp</a>
             </div>
         </div>
     </nav>
@@ -357,8 +359,8 @@
             </div>
 
             <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="w-full sm:w-auto bg-brand-graphite hover:bg-brand-gold text-brand-offWhite text-center font-sub font-medium tracking-widest uppercase text-xs px-8 py-4 rounded shadow-premium hover:shadow-floating transition-all duration-300 transform hover:-translate-y-0.5">
-                    💬 Agendar Consulta Particular
+                <a href="#quiz-intimo" class="w-full sm:w-auto bg-brand-graphite hover:bg-brand-gold text-brand-offWhite text-center font-sub font-medium tracking-widest uppercase text-xs px-8 py-4 rounded shadow-premium hover:shadow-floating transition-all duration-300 transform hover:-translate-y-0.5">
+                    ✦ Fazer Avaliação de Perfil
                 </a>
                 <span class="font-sub text-[10px] tracking-wider text-brand-taupe max-w-[200px] text-center sm:text-left uppercase font-medium">Atendimento individual e exclusivo.</span>
             </div>
@@ -371,19 +373,19 @@
         </div>
     </header>
 
-    <!-- ================= QUIZ DE SEXOLOGIA ================= -->
+    <!-- ================= QUIZ / AVALIAÇÃO DE PERFIL ================= -->
     <div class="px-6">
         <div id="quiz-intimo" class="quiz-section">
             <div class="quiz-container">
-                <span class="quiz-badge">✦ TRIAGEM PARA ATENDIMENTO PARTICULAR ✦</span>
-                <h2 class="quiz-title">Descubra se o acompanhamento em Sexologia Prática é ideal para você</h2>
-                <p class="quiz-subtitle">Responda a 5 perguntas rápidas (1 minuto) para verificar a disponibilidade de agenda e solicitar seu agendamento.</p>
+                <span class="quiz-badge">✦ AVALIAÇÃO PARA TERAPIA PARTICULAR ✦</span>
+                <h2 class="quiz-title">A Terapia Sexual é ideal para o seu momento?</h2>
+                <p class="quiz-subtitle">O processo terapêutico exige comprometimento, dedicação mútua e investimento financeiro. Responda às perguntas abaixo para verificar se o seu perfil é compatível.</p>
 
                 <div id="quiz-card" class="quiz-card">
                     <div class="quiz-progress-bar">
-                        <div id="quiz-progress" class="quiz-progress-fill" style="width: 20%;"></div>
+                        <div id="quiz-progress" class="quiz-progress-fill" style="width: 33%;"></div>
                     </div>
-                    <span id="quiz-step" class="quiz-step">Pergunta 1 de 5</span>
+                    <span id="quiz-step" class="quiz-step">Pergunta 1 de 3</span>
 
                     <div id="quiz-step-container">
                         <!-- Perguntas injetadas via JavaScript -->
@@ -535,7 +537,7 @@
                     <li><a href="#abordagem" class="hover:text-brand-offWhite transition-colors">Abordagem</a></li>
                     <li><a href="#para-quem" class="hover:text-brand-offWhite transition-colors">Público</a></li>
                     <li><a href="#tratamentos" class="hover:text-brand-offWhite transition-colors">Como Posso Ajudar</a></li>
-                    <li><a href="#quiz-intimo" class="hover:text-brand-offWhite transition-colors">Quiz Interativo</a></li>
+                    <li><a href="#quiz-intimo" class="hover:text-brand-offWhite transition-colors">Avaliação</a></li>
                 </ul>
             </div>
 
@@ -566,41 +568,24 @@
     <script>
         const questions = [
             {
-                q: "Se você pudesse destravar apenas UMA dessas áreas na sua vida íntima hoje, qual seria?",
+                q: "Quando o assunto é a sua vida íntima atual, qual destas frases melhor descreve o seu momento?",
                 options: [
-                    { text: "A) Resgatar meu desejo e libido de forma prática no dia a dia.", score: 'A' },
-                    { text: "B) Destravar inseguranças, ansiedade de desempenho e bloqueios na hora H.", score: 'A' },
-                    { text: "C) Melhorar a sintonia, o diálogo e a cumplicidade a dois.", score: 'A' },
-                    { text: "D) Entender questões pontuais sobre meu corpo ou sexualidade.", score: 'B' },
-                    { text: "E) Outros", score: 'A' }
+                    { text: "A) Sinto uma queda persistente no desejo, na libido ou um distanciamento na relação que está me gerando sofrimento ou frustração.", score: 'A' },
+                    { text: "B) Tenho apenas curiosidade sobre o assunto ou busco dicas rápidas na internet.", score: 'B' }
                 ]
             },
             {
-                q: "Quando você pensa em resolver esse impasse, o que faz mais sentido para o seu momento?",
+                q: "Você lida com bloqueios, inseguranças profundas ou desconfortos (como falta de lubrificação ou dor) que atrapalham o seu prazer e que você não consegue resolver sozinha(o)?",
                 options: [
-                    { text: "A) Um acompanhamento direto e focado em soluções, com ferramentas e exercícios práticos.", score: 'A' },
-                    { text: "B) Apenas tirar dúvidas esporádicas de forma gratuita pela internet.", score: 'B' }
+                    { text: "A) Sim, sinto que esses obstáculos travam minha liberdade e preciso de ajuda especializada para superá-los.", score: 'A' },
+                    { text: "B) Não vejo grandes travas, levo a minha intimidade de forma bem casual.", score: 'B' }
                 ]
             },
             {
-                q: "Quanto do seu bem-estar, autoestima ou conexão a dois você está perdendo por não ter um plano prático de ação?",
+                q: "A Terapia Sexual é um processo clínico particular, estruturado e pago, que exige tempo, sigilo e dedicação mútua entre terapeuta e paciente. Você está em um momento de vida onde pode priorizar esse investimento no seu bem-estar?",
                 options: [
-                    { text: "A) Muito! Quero ferramentas objetivas para mudar essa realidade o quanto antes.", score: 'A' },
-                    { text: "B) Pouco. Estou incomodado(a), mas ainda vou levando no meu tempo.", score: 'B' }
-                ]
-            },
-            {
-                q: "Você está disposto(a) a se dedicar ao processo com exercícios e dinâmicas personalizadas para resgatar sua vida sexual?",
-                options: [
-                    { text: "A) Sim! Quero um método prático e estou pronto(a) para me dedicar ao processo.", score: 'A' },
-                    { text: "B) Não tenho disponibilidade ou interesse em colocar em prática no momento.", score: 'B' }
-                ]
-            },
-            {
-                q: "O atendimento em Sexologia é realizado de forma 100% individual, privada e particular (pago). Você deseja verificar o valor das sessões e os horários disponíveis?",
-                options: [
-                    { text: "A) Sim! Estou ciente de que é um serviço particular e quero verificar a agenda de consultas.", score: 'A' },
-                    { text: "B) No momento não estou buscando um atendimento pago, apenas conteúdos no Instagram.", score: 'B' }
+                    { text: "A) Sim, compreendo perfeitamente o valor do processo clínico e estou pronta(o) para investir em mim.", score: 'A' },
+                    { text: "B) No momento prefiro apenas consumir conteúdos gratuitos e dicas na internet.", score: 'B' }
                 ]
             }
         ];
@@ -642,13 +627,14 @@
             const container = document.getElementById('quiz-step-container');
             document.getElementById('quiz-step').style.display = 'none';
 
-            const isQualified = userScores[4] === 'A' && userScores.filter(s => s === 'A').length >= 4;
+            const isQualified = userScores.every(s => s === 'A');
 
             if (isQualified) {
                 container.innerHTML = `
                     <div class="quiz-result">
-                        <h3>Perfil apto para agendamento de consulta particular!</h3>
-                        <p>Preencha seus dados para conectar diretamente ao WhatsApp e receber os horários disponíveis e valores da sessão:</p>
+                        <h3>Parabéns! Seu perfil está alinhado para a Terapia.</h3>
+                        <p>Como você reconhece o valor do processo clínico e está disposta a investir no seu bem-estar, você ganhou o direito a um <b>bate-papo inicial exclusivo de 20 minutos (sem custo)</b> para alinharmos o seu caso.</p>
+                        <p>Preencha seus dados para abrir o WhatsApp diretamente comigo:</p>
                         
                         <div class="quiz-form-group">
                             <label for="user-name">Nome Completo:</label>
@@ -659,14 +645,14 @@
                             <input type="tel" id="user-phone" placeholder="(11) 99999-9999">
                         </div>
 
-                        <button onclick="sendToWhatsapp()" class="quiz-cta-btn">💬 SOLICITAR AGENDAMENTO DE CONSULTA</button>
+                        <button onclick="sendToWhatsapp()" class="quiz-cta-btn">💬 AGENDAR MEU BATE-PAPO DE 20 MINUTOS</button>
                     </div>
                 `;
             } else {
                 container.innerHTML = `
                     <div class="quiz-result">
-                        <h3>Obrigada por responder!</h3>
-                        <p>No seu momento atual, o melhor caminho é acompanhar orientações e conteúdos diários gratuitos no perfil do Instagram para se conectar com o tema no seu ritmo.</p>
+                        <h3>Obrigada por responder à nossa avaliação!</h3>
+                        <p>Pelas suas respostas, percebemos que no momento atual você busca conteúdos informativos ou formatos diferentes do atendimento clínico particular. O melhor caminho para você continuar evoluindo no seu ritmo é acompanhar as orientações diárias no Instagram.</p>
                         <a href="https://instagram.com" target="_blank" class="quiz-insta-btn">📸 SEGUIR NO INSTAGRAM</a>
                     </div>
                 `;
@@ -682,7 +668,7 @@
                 return;
             }
 
-            const textMsg = `Olá, Andréia! Fiz a triagem no seu site e gostaria de verificar os valores e horários disponíveis para agendar uma consulta particular.\n\nNome: ${name}\nTelefone: ${phone}`;
+            const textMsg = `Olá, Andréia! Gostaria de marcar um bate-papo de 20 min. gratuito para entender se a terapia sexual poderá me ajudar.\n\nNome: ${name}\nTelefone: ${phone}`;
             const whatsappUrl = `https://api.whatsapp.com/send?phone=5511952182049&text=${encodeURIComponent(textMsg)}`;
             
             window.open(whatsappUrl, '_blank');
