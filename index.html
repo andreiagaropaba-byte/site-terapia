@@ -4,601 +4,371 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andréia Cardoso | Sexologia & Terapia Sexual</title>
-    <meta name="description" content="Resgate sua intimidade e viva uma vida sexual plena. Atendimento 100% online, seguro e sob estrito sigilo profissional.">
-    
-    <!-- Prévia para o WhatsApp e Redes Sociais (Open Graph) -->
-    <meta property="og:title" content="Andréia Cardoso | Sexologia & Terapia Sexual">
-    <meta property="og:description" content="Resgate sua intimidade e viva uma vida sexual plena. Atendimento 100% online, seguro e sob estrito sigilo profissional.">
-    <meta property="og:type" content="website">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['Cormorant Garamond', 'serif'],
-                        sans: ['Lato', 'sans-serif'],
-                        sub: ['Montserrat', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            offWhite: '#F7F4EF',
-                            champagne: '#E8DCCB',
-                            taupe: '#B09B8C',
-                            gold: '#C4A66B',
-                            graphite: '#2C2C2C',
-                        }
-                    },
-                    boxShadow: {
-                        'premium': '0 20px 40px -15px rgba(44, 44, 44, 0.04)',
-                        'floating': '0 30px 60px -12px rgba(176, 155, 140, 0.12)',
-                        'card-hover': '0 25px 50px -12px rgba(196, 166, 107, 0.12)',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Google Fonts para tipografia elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .editorial-line {
-            position: relative;
-        }
-        .editorial-line::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 60px;
-            height: 1px;
-            background-color: #C4A66B;
-        }
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --cor-fundo-principal: #F4F1EA;
+            --cor-fundo-card: #EAE3D9;
+            --cor-texto-principal: #3D3833;
+            --cor-destaque: #8C7355;
+            --cor-branco: #FFFFFF;
+            --cor-cinza-suave: #D1CBC1;
         }
 
-        /* ESTILOS DO QUIZ INTERATIVO COM DESTAQUE PREMIUM */
-        .quiz-section {
-            background: linear-gradient(180deg, #fbf7f0 0%, #f4ede2 100%);
-            padding: 60px 24px;
-            font-family: inherit;
-            color: #333;
-            border-radius: 24px;
-            margin-top: 60px;
-            border: 1px solid #e2d7c5;
-            box-shadow: 0 20px 50px -10px rgba(196, 166, 107, 0.15);
-            position: relative;
-            overflow: hidden;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .quiz-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #C4A66B 0%, #E8DCCB 50%, #C4A66B 100%);
+
+        body {
+            background-color: var(--cor-fundo-principal);
+            color: var(--cor-texto-principal);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
         }
-        .quiz-container {
-            max-width: 680px;
-            margin: 0 auto;
+
+        h1, h2, h3, h4, .monograma {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Topo de aviso de sigilo */
+        .top-bar {
+            background-color: #3D3833;
+            color: #F4F1EA;
             text-align: center;
-        }
-        .quiz-badge {
-            display: inline-block;
             font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #C4A66B;
-            font-weight: 700;
-            background: #ffffff;
-            padding: 6px 16px;
-            border-radius: 20px;
-            border: 1px solid #e0d5c1;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            margin-bottom: 12px;
-        }
-        .quiz-title {
-            font-size: 28px;
-            margin: 12px 0;
-            color: #2C2C2C;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-        .quiz-subtitle {
-            font-size: 15px;
-            color: #666;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        .quiz-card {
-            background: #ffffff;
-            border: 1px solid #e8e0d0;
-            border-radius: 16px;
-            padding: 32px 24px;
-            box-shadow: 0 15px 35px rgba(44, 44, 44, 0.06);
-            text-align: left;
-        }
-        .quiz-progress-bar {
-            background: #f0ebe1;
-            height: 6px;
-            border-radius: 3px;
-            margin-bottom: 18px;
-            overflow: hidden;
-        }
-        .quiz-progress-fill {
-            background: #C4A66B;
-            height: 100%;
-            transition: width 0.3s ease;
-        }
-        .quiz-step {
-            font-size: 12px;
-            color: #888;
-            font-weight: 600;
-            text-transform: uppercase;
             letter-spacing: 1px;
+            padding: 8px 20px;
+            text-transform: uppercase;
         }
-        .quiz-question {
-            font-size: 18px;
-            color: #2C2C2C;
-            margin: 16px 0 22px 0;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-        .quiz-options {
+
+        /* Cabeçalho */
+        .site-header {
+            background-color: var(--cor-fundo-principal);
+            border-bottom: 1px solid rgba(140, 115, 85, 0.2);
+            padding: 20px 40px;
             display: flex;
-            flex-direction: column;
-            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-        .quiz-btn {
-            background: #faf8f5;
-            border: 1px solid #e5dcce;
-            padding: 14px 18px;
-            border-radius: 10px;
-            text-align: left;
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.25s ease;
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .monograma {
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--cor-destaque);
+            letter-spacing: 2px;
+            border: 1px solid var(--cor-destaque);
+            padding: 6px 10px;
+        }
+
+        .marca-texto h1 {
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            color: var(--cor-texto-principal);
+        }
+
+        .marca-texto h2 {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--cor-destaque);
+            text-transform: uppercase;
+        }
+
+        .site-header nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .site-header nav a {
+            text-decoration: none;
+            color: var(--cor-texto-principal);
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .site-header nav a:hover {
+            color: var(--cor-destaque);
+        }
+
+        .btn-cta {
+            background-color: var(--cor-destaque) !important;
+            color: var(--cor-branco) !important;
+            padding: 10px 20px;
+            border-radius: 2px;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-cta:hover {
+            background-color: #735d43 !important;
+        }
+
+        /* Conteúdo principal */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 0 80px 0;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin: 20px 0;
+            color: var(--cor-texto-principal);
             font-weight: 400;
         }
-        .quiz-btn:hover {
-            background: #C4A66B;
-            color: #ffffff;
-            border-color: #C4A66B;
-            transform: translateX(4px);
+
+        .hero p {
+            font-size: 16px;
+            color: #59524a;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
         }
-        .quiz-form-group {
-            margin-bottom: 16px;
-            text-align: left;
+
+        /* Seções estilizadas */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(140, 115, 85, 0.15);
         }
-        .quiz-form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: #444;
-            margin-bottom: 6px;
+
+        section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--cor-texto-principal);
         }
-        .quiz-form-group input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #dcd3c3;
-            border-radius: 8px;
+
+        /* Botão Flutuante do WhatsApp Customizado */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--cor-destaque) !important;
+            color: #FFFFFF !important;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(61, 56, 51, 0.25);
+            z-index: 999;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #735d43 !important;
+            transform: scale(1.05);
+        }
+
+        /* Rodapé Completo */
+        .site-footer {
+            background-color: var(--cor-texto-principal);
+            color: var(--cor-fundo-principal);
+            padding: 60px 20px 20px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(140, 115, 85, 0.3);
+        }
+
+        .monograma-footer {
+            font-size: 24px;
+            color: var(--cor-destaque);
+            letter-spacing: 2px;
+            border: 1px solid var(--cor-destaque);
+            padding: 6px 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .site-footer h3 {
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            color: var(--cor-fundo-principal);
+        }
+
+        .site-footer h4 {
+            font-size: 16px;
+            color: var(--cor-destaque);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .site-footer p, .site-footer ul {
             font-size: 14px;
-            box-sizing: border-box;
-            background-color: #fdfcf9;
-        }
-        .quiz-form-group input:focus {
-            outline: none;
-            border-color: #C4A66B;
-            background-color: #ffffff;
-        }
-        .quiz-result {
-            text-align: center;
-        }
-        .quiz-result h3 {
-            font-size: 22px;
-            color: #2C2C2C;
-            margin-bottom: 12px;
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-        }
-        .quiz-result p {
-            font-size: 14px;
-            color: #555;
             line-height: 1.6;
-            margin-bottom: 24px;
+            color: var(--cor-cinza-suave);
         }
-        .quiz-cta-btn {
-            display: inline-block;
-            background-color: #25d366;
-            color: #ffffff !important;
+
+        .site-footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .site-footer ul li {
+            margin-bottom: 8px;
+        }
+
+        .site-footer ul li a {
+            color: var(--cor-cinza-suave);
             text-decoration: none;
-            padding: 16px 28px;
-            font-weight: 700;
-            border-radius: 30px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
-            transition: all 0.25s ease;
-            width: 100%;
-            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
         }
-        .quiz-cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+
+        .site-footer ul li a:hover {
+            color: var(--cor-destaque);
         }
-        .quiz-insta-btn {
+
+        .sigilo-texto {
+            font-size: 12px;
+            margin-top: 15px;
+            color: #a39b90;
+        }
+
+        .footer-btn {
             display: inline-block;
-            background-color: #e1306c;
-            color: #ffffff !important;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: var(--cor-destaque);
+            color: var(--cor-branco);
             text-decoration: none;
-            padding: 14px 28px;
-            font-weight: 700;
-            border-radius: 30px;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
+            font-size: 13px;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: background 0.3s ease;
+        }
+
+        .footer-btn:hover {
+            background-color: #a38865;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 20px auto 0 auto;
+            text-align: center;
+            font-size: 12px;
+            color: #a39b90;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .site-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
-<body class="bg-brand-offWhite text-brand-graphite font-sans antialiased selection:bg-brand-champagne">
+<body>
 
-    <div class="bg-brand-graphite text-brand-offWhite text-xs py-3.5 px-4 text-center font-sub uppercase tracking-widest border-b border-brand-gold/20 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
-        🔒 Atendimento Particular 100% Online, Seguro e Sob Estrito Sigilo Profissional.
+    <!-- Topo de Segurança -->
+    <div class="top-bar">
+        🔒 Atendimento particular 100% online, seguro e sob estrito sigilo profissional.
     </div>
 
-    <nav class="bg-white/95 backdrop-blur-md border-b border-brand-champagne shadow-sm sticky top-[49px] z-40 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-            <div class="flex items-center gap-5 group cursor-pointer">
-                <div class="relative w-14 h-14 rounded-full border border-brand-gold flex items-center justify-center transition-all duration-700 bg-brand-champagne/20 p-1">
-                    <div class="absolute inset-[3px] border border-brand-gold/30 rounded-full"></div>
-                    <span class="font-serif text-xl font-medium text-brand-graphite tracking-tight group-hover:text-brand-gold transition-colors block italic mt-[-1px]">AC</span>
-                </div>
-                <div class="space-y-0.5">
-                    <span class="font-serif text-xl md:text-2xl tracking-wide text-brand-graphite block uppercase font-bold leading-none group-hover:text-brand-gold transition-colors duration-300">
-                        Andréia Cardoso
-                    </span>
-                    <span class="font-sub text-[9px] md:text-[10px] tracking-[0.3em] text-brand-taupe block uppercase font-bold leading-none">
-                        Sexologia & Terapia Sexual
-                    </span>
-                </div>
-            </div>
-
-            <div class="hidden md:flex items-center gap-8 font-sub text-[11px] tracking-widest uppercase font-semibold">
-                <a href="#abordagem" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Abordagem</a>
-                <a href="#para-quem" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Público</a>
-                <a href="#tratamentos" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Como Posso Ajudar</a>
-                <a href="#sobre" class="text-brand-graphite/80 hover:text-brand-gold transition-colors">Sobre</a>
-                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="bg-brand-gold hover:bg-brand-graphite text-brand-offWhite px-6 py-3 rounded transition-all duration-300 shadow-premium uppercase tracking-widest text-[10px]">Agendar Consulta</a>
+    <!-- Cabeçalho -->
+    <header class="site-header">
+        <div class="logo-container">
+            <span class="monograma">AC</span>
+            <div class="marca-texto">
+                <h1>ANDRÉIA CARDOSO</h1>
+                <h2>Sexologia & Terapia Sexual</h2>
             </div>
         </div>
-    </nav>
-
-    <header class="max-w-7xl mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center relative">
-        <div class="lg:col-span-7 space-y-8 text-center lg:text-left z-10">
-            <div class="inline-block text-xs font-sub font-semibold tracking-[0.2em] text-brand-gold uppercase border-b border-brand-gold/60 pb-1">
-                Acolhimento Clínico Especializado
-            </div>
-            
-            <h1 class="font-serif text-4xl md:text-6xl text-brand-graphite leading-[1.15] font-light">
-                Resgate sua intimidade e viva uma vida sexual plena, livre de tabus e com mais segurança.
-            </h1>
-
-            <div class="text-base md:text-lg text-brand-graphite/85 space-y-4 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
-                <p>O corpo muda, os hormônios oscilam e, muitas vezes, parece que você se desconectou de si mesma.</p>
-                <p>É comum sentir diminuição da libido, do desejo, desconforto ou até mesmo uma insegurança que antes não existia.</p>
-                <p class="font-serif text-brand-gold text-2xl font-normal italic pt-2">Mas você não precisa passar por isso sozinha e nem se resignar a uma vida sem prazer.</p>
-            </div>
-
-            <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
-                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="w-full sm:w-auto bg-brand-graphite hover:bg-brand-gold text-brand-offWhite text-center font-sub font-medium tracking-widest uppercase text-xs px-8 py-4 rounded shadow-premium hover:shadow-floating transition-all duration-300 transform hover:-translate-y-0.5">
-                    💬 Agendar Consulta Particular
-                </a>
-                <span class="font-sub text-[10px] tracking-wider text-brand-taupe max-w-[200px] text-center sm:text-left uppercase font-medium">Atendimento individual e exclusivo.</span>
-            </div>
-        </div>
-
-        <div class="lg:col-span-5 flex justify-center relative">
-            <div class="w-72 h-96 md:w-full md:max-w-md rounded-t-[120px] rounded-b-xl shadow-floating overflow-hidden aspect-[3/4] border border-brand-champagne p-3 bg-white transition-all duration-500 hover:scale-[1.01] hover:border-brand-gold/50">
-                <img src="./andreia.jpg" alt="Andréia Cardoso" class="w-full h-full object-cover rounded-t-[110px] rounded-lg bg-brand-champagne">
-            </div>
-        </div>
+        <nav>
+            <a href="#abordagem">ABORDAGEM</a>
+            <a href="#publico">PÚBLICO</a>
+            <a href="#ajuda">COMO POSSO AJUDAR</a>
+            <a href="#sobre">SOBRE</a>
+            <a href="#agendar" class="btn-cta">AGENDAR CONSULTA</a>
+        </nav>
     </header>
 
-    <section id="abordagem" class="bg-brand-champagne/25 text-brand-graphite py-24 px-6 relative overflow-hidden border-y border-brand-champagne/60">
-        <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-            <span class="font-sub text-xs tracking-[0.25em] text-brand-gold uppercase font-bold block">O Manifesto</span>
-            
-            <h2 class="font-serif text-3xl md:text-4xl text-brand-graphite font-light max-w-2xl mx-auto leading-relaxed">
-                Um espaço de acolhimento clínico e livre de julgamentos
-            </h2>
+    <!-- Conteúdo Principal -->
+    <main>
+        <section id="abordagem" class="hero">
+            <span style="color: var(--cor-destaque); text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">Acolhimento Clínico Especializado</span>
+            <h2>Resgate sua intimidade e viva uma vida sexual plena, livre de tabus e com mais segurança.</h2>
+            <p>O corpo muda, os hormônios oscilam e, muitas vezes, parece que você se desconectou de si mesma. Mas você não precisa passar por isso sozinha.</p>
+            <a href="#agendar" class="btn-cta">💬 AGENDAR CONSULTA PARTICULAR</a>
+        </section>
 
-            <p class="text-base md:text-lg text-brand-graphite/85 leading-relaxed font-light max-w-3xl mx-auto">
-                Desenhado para que você compreenda suas dificuldades e queixas íntimas, resgatando o seu bem-estar através de um olhar científico e profundamente humano. O meu papel é te guiar na reconexão com o seu corpo e com o seu desejo nesta nova fase da vida.
-            </p>
+        <section id="ajuda">
+            <h3>Como posso ajudar?</h3>
+            <p>Abordagem personalizada voltada para a desconstrução de mitos, tabus e busca pelo bem-estar integral.</p>
+        </section>
+    </main>
 
-            <div class="w-16 h-[1px] bg-brand-gold mx-auto my-6"></div>
-
-            <p class="text-brand-gold font-serif text-2xl md:text-3xl italic max-w-2xl mx-auto font-normal leading-relaxed">
-                "Um porto seguro para você compreender essas mudanças, resgatar o seu desejo e vivenciar a sua soberania íntima com toda a plenitude que a maturidade proporciona."
-            </p>
-        </div>
-    </section>
-
-    <section id="para-quem" class="py-24 px-6 bg-white border-b border-brand-champagne/40">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center space-y-4 mb-16">
-                <span class="font-sub text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Acolhimento Plural</span>
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-graphite font-light">Para quem é o atendimento?</h2>
-                <div class="w-12 h-[1px] bg-brand-gold/60 mx-auto pt-2"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="border border-brand-champagne/60 p-8 rounded-xl bg-brand-offWhite/30 hover:border-brand-gold transition-all duration-300">
-                    <span class="text-brand-gold text-xl block mb-4">✓</span>
-                    <p class="font-serif text-lg text-brand-graphite font-medium mb-2">Mulheres</p>
-                    <p class="text-sm text-brand-graphite/75 font-light leading-relaxed">Que desejam compreender melhor sua sexualidade e se reconectar com o próprio corpo.</p>
-                </div>
-
-                <div class="border border-brand-champagne/60 p-8 rounded-xl bg-brand-offWhite/30 hover:border-brand-gold transition-all duration-300">
-                    <span class="text-brand-gold text-xl block mb-4">✓</span>
-                    <p class="font-serif text-lg text-brand-graphite font-medium mb-2">Homens</p>
-                    <p class="text-sm text-brand-graphite/75 font-light leading-relaxed">Que enfrentam dificuldades relacionadas ao desempenho, desejo ou autoconfiança.</p>
-                </div>
-
-                <div class="border border-brand-champagne/60 p-8 rounded-xl bg-brand-offWhite/30 hover:border-brand-gold transition-all duration-300">
-                    <span class="text-brand-gold text-xl block mb-4">✓</span>
-                    <p class="font-serif text-lg text-brand-graphite font-medium mb-2">Casais</p>
-                    <p class="text-sm text-brand-graphite/75 font-light leading-relaxed">Que desejam fortalecer a intimidade, reacender a cumplicidade e melhorar a comunicação.</p>
-                </div>
-
-                <div class="border border-brand-champagne/60 p-8 rounded-xl bg-brand-offWhite/30 hover:border-brand-gold transition-all duration-300 md:col-span-1 lg:col-span-1">
-                    <span class="text-brand-gold text-xl block mb-4">✓</span>
-                    <p class="font-serif text-lg text-brand-graphite font-medium mb-2">Autoconhecimento</p>
-                    <p class="text-sm text-brand-graphite/75 font-light leading-relaxed">Pessoas que buscam o desenvolvimento, autoconhecimento amplo e bem-estar sexual pleno.</p>
-                </div>
-
-                <div class="border border-brand-champagne/60 p-8 rounded-xl bg-brand-offWhite/30 hover:border-brand-gold transition-all duration-300 md:col-span-2 lg:col-span-2">
-                    <span class="text-brand-gold text-xl block mb-4">✓</span>
-                    <p class="font-serif text-lg text-brand-graphite font-medium mb-2">Relacionamentos Saudáveis</p>
-                    <p class="text-sm text-brand-graphite/75 font-light leading-relaxed">Quem deseja romper travas invisíveis para vivenciar relacionamentos muito mais saudáveis, equilibrados e profundamente satisfatórios.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tratamentos" class="py-24 lg:py-32 px-6 max-w-6xl mx-auto">
-        <div class="max-w-3xl mb-16 space-y-4">
-            <span class="font-sub text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Demandas Clínicas</span>
-            <h2 class="font-serif text-3xl md:text-5xl text-brand-graphite editorial-line pb-4 font-light">
-                Como posso ajudar?
-            </h2>
-            <p class="text-brand-taupe font-light text-base">Abaixo estão algumas das principais queixas e temas trabalhados em consultório de forma personalizada:</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-gradient-to-tr from-white to-brand-champagne/30 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
-                <div>
-                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
-                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Baixa Libido</h3>
-                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Tratamento e investigação para a redução ou ausência persistente do desejo sexual.</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-b from-white to-brand-champagne/20 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
-                <div>
-                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
-                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Falta de Conexão</h3>
-                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Apoio em momentos de distanciamento afetivo e desgaste na rotina do relacionamento.</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-b from-white to-brand-champagne/20 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
-                <div>
-                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
-                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Comunicação Íntima</h3>
-                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Superação de barreiras e dificuldades para expressar vontades, limites e fantasias a dois.</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-tr from-white to-brand-champagne/30 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
-                <div>
-                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
-                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Autoestima & Inseguranças</h3>
-                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Abordagem focada em travas, timidez excessiva, autocrítica e aceitação das mudanças corporais.</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-tr from-white to-brand-champagne/30 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
-                <div>
-                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
-                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Orientação para Casais</h3>
-                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Intervenções clínicas para alinhar expectativas, medos e resgatar a parceria na intimidade.</p>
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-tr from-white to-brand-champagne/30 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
-                <div>
-                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
-                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Educação & Bem-Estar</h3>
-                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Desenvolvimento do autoconhecimento e melhora significativa na qualidade de vida sexual.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- ================= QUIZ DE SEXOLOGIA (COM VISUAL DESTACADO E CHAMATIVO) ================= -->
-        <div id="quiz-intimo" class="quiz-section">
-            <div class="quiz-container">
-                <span class="quiz-badge">✦ TRIAGEM PARA ATENDIMENTO PARTICULAR ✦</span>
-                <h2 class="quiz-title">Descubra se o acompanhamento em Sexologia Prática é ideal para você</h2>
-                <p class="quiz-subtitle">Responda a 5 perguntas rápidas (1 minuto) para verificar a disponibilidade de agenda e solicitar seu agendamento.</p>
-
-                <div id="quiz-card" class="quiz-card">
-                    <div class="quiz-progress-bar">
-                        <div id="quiz-progress" class="quiz-progress-fill" style="width: 20%;"></div>
-                    </div>
-                    <span id="quiz-step" class="quiz-step">Pergunta 1 de 5</span>
-
-                    <div id="quiz-step-container">
-                        <!-- Perguntas injetadas via JavaScript -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ================= FIM DO QUIZ ================= -->
-
-    </section>
-
-    <section class="bg-brand-champagne/15 py-24 px-6 border-y border-brand-champagne/50">
-        <div class="max-w-4xl mx-auto text-center space-y-6">
-            <span class="font-sub text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Conscientização</span>
-            <h2 class="font-serif text-3xl md:text-4xl text-brand-graphite font-light">Por que buscar ajuda profissional?</h2>
-            <p class="text-brand-graphite/80 font-light text-base md:text-lg leading-relaxed max-w-2xl mx-auto italic">
-                "A sexualidade faz parte da saúde e do bem-estar essencial de todo ser humano."
-            </p>
-        </div>
-    </section>
-
-    <!-- Botão de WhatsApp Flutuante no Canto da Tela -->
-    <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center">
-        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
-        </svg>
+    <!-- Botão Flutuante do WhatsApp Personalizado -->
+    <a href="https://wa.me/" class="whatsapp-float" target="_blank" aria-label="Contato WhatsApp">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script>
-        const questions = [
-            {
-                q: "Se você pudesse destravar apenas UMA dessas áreas na sua vida íntima hoje, qual seria?",
-                options: [
-                    { text: "A) Resgatar meu desejo e libido de forma prática no dia a dia.", score: 'A' },
-                    { text: "B) Destravar inseguranças, ansiedade de desempenho e bloqueios na hora H.", score: 'A' },
-                    { text: "C) Melhorar a sintonia, o diálogo e a cumplicidade a dois.", score: 'A' },
-                    { text: "D) Entender questões pontuais sobre meu corpo ou sexualidade.", score: 'B' },
-                    { text: "E) Outros", score: 'A' }
-                ]
-            },
-            {
-                q: "Quando você pensa em resolver esse impasse, o que faz mais sentido para o seu momento?",
-                options: [
-                    { text: "A) Um acompanhamento direto e focado em soluções, com ferramentas e exercícios práticos.", score: 'A' },
-                    { text: "B) Apenas tirar dúvidas esporádicas de forma gratuita pela internet.", score: 'B' }
-                ]
-            },
-            {
-                q: "Quanto do seu bem-estar, autoestima ou conexão a dois você está perdendo por não ter um plano prático de ação?",
-                options: [
-                    { text: "A) Muito! Quero ferramentas objetivas para mudar essa realidade o quanto antes.", score: 'A' },
-                    { text: "B) Pouco. Estou incomodado(a), mas ainda vou levando no meu tempo.", score: 'B' }
-                ]
-            },
-            {
-                q: "Você está disposto(a) a se dedicar ao processo com exercícios e dinâmicas personalizadas para resgatar sua vida sexual?",
-                options: [
-                    { text: "A) Sim! Quero um método prático e estou pronto(a) para me dedicar ao processo.", score: 'A' },
-                    { text: "B) Não tenho disponibilidade ou interesse em colocar em prática no momento.", score: 'B' }
-                ]
-            },
-            {
-                q: "O atendimento em Sexologia é realizado de forma 100% individual, privada e particular (pago). Você deseja verificar o valor das sessões e os horários disponíveis?",
-                options: [
-                    { text: "A) Sim! Estou ciente de que é um serviço particular e quero verificar a agenda de consultas.", score: 'A' },
-                    { text: "B) No momento não estou buscando um atendimento pago, apenas conteúdos no Instagram.", score: 'B' }
-                ]
-            }
-        ];
-
-        let currentStep = 0;
-        let userScores = [];
-
-        function renderStep() {
-            const container = document.getElementById('quiz-step-container');
-            const stepLabel = document.getElementById('quiz-step');
-            const progressBar = document.getElementById('quiz-progress');
-
-            stepLabel.innerText = `Pergunta ${currentStep + 1} de ${questions.length}`;
-            progressBar.style.width = `${((currentStep + 1) / questions.length) * 100}%`;
-
-            const currentQ = questions[currentStep];
-            let html = `<div class="quiz-question">${currentQ.q}</div><div class="quiz-options">`;
-
-            currentQ.options.forEach((opt) => {
-                html += `<button class="quiz-btn" onclick="selectOption('${opt.score}')">${opt.text}</button>`;
-            });
-
-            html += `</div>`;
-            container.innerHTML = html;
-        }
-
-        function selectOption(score) {
-            userScores.push(score);
-            currentStep++;
-
-            if (currentStep < questions.length) {
-                renderStep();
-            } else {
-                showResult();
-            }
-        }
-
-        function showResult() {
-            const container = document.getElementById('quiz-step-container');
-            document.getElementById('quiz-step').style.display = 'none';
-
-            // Requisito estrito: Pergunta 5 (confirmação do investimento) precisa ser 'A' + maioria de respostas 'A'
-            const isQualified = userScores[4] === 'A' && userScores.filter(s => s === 'A').length >= 4;
-
-            if (isQualified) {
-                container.innerHTML = `
-                    <div class="quiz-result">
-                        <h3>Perfil apto para agendamento de consulta particular!</h3>
-                        <p>Preencha seus dados para conectar diretamente ao WhatsApp e receber os horários disponíveis e valores da sessão:</p>
-                        
-                        <div class="quiz-form-group">
-                            <label for="user-name">Nome Completo:</label>
-                            <input type="text" id="user-name" placeholder="Digite seu nome">
-                        </div>
-                        <div class="quiz-form-group">
-                            <label for="user-phone">Telefone / WhatsApp (com DDD):</label>
-                            <input type="tel" id="user-phone" placeholder="(11) 99999-9999">
-                        </div>
-
-                        <button onclick="sendToWhatsapp()" class="quiz-cta-btn">💬 SOLICITAR AGENDAMENTO DE CONSULTA</button>
-                    </div>
-                `;
-            } else {
-                container.innerHTML = `
-                    <div class="quiz-result">
-                        <h3>Obrigada por responder!</h3>
-                        <p>No seu momento atual, o melhor caminho é acompanhar orientações e conteúdos diários gratuitos no perfil do Instagram para se conectar com o tema no seu ritmo.</p>
-                        <a href="https://instagram.com" target="_blank" class="quiz-insta-btn">📸 SEGUIR NO INSTAGRAM</a>
-                    </div>
-                `;
-            }
-        }
-
-        function sendToWhatsapp() {
-            const name = document.getElementById('user-name').value.trim();
-            const phone = document.getElementById('user-phone').value.trim();
-
-            if (!name || !phone) {
-                alert("Por favor, preencha seu nome e telefone para prosseguir.");
-                return;
-            }
-
-            const textMsg = `Olá, Andréia! Fiz a triagem no seu site e gostaria de verificar os valores e horários disponíveis para agendar uma consulta particular.\n\nNome: ${name}\nTelefone: ${phone}`;
-            const whatsappUrl = `https://api.whatsapp.com/send?phone=5511952182049&text=${encodeURIComponent(textMsg)}`;
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <span class="monograma-footer">AC</span>
+                <h3>ANDRÉIA CARDOSO</h3>
+                <p>Sexologia & Terapia Sexual</p>
+                <p class="sigilo-texto">🔒 Atendimento particular 100% online, seguro e sob estrito sigilo profissional.</p>
+            </div>
             
-            window.open(whatsappUrl, '_blank');
-        }
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#abordagem">Abordagem</a></li>
+                    <li><a href="#publico">Público</a></li>
+                    <li><a href="#ajuda">Como Posso Ajudaar</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </div>
 
-        document.addEventListener("DOMContentLoaded", function() {
-            renderStep();
-        });
-    </script>
+            <div class="footer-col">
+                <h4>Contato & Agenda</h4>
+                <p>Atendimento exclusivo mediante agendamento prévio.</p>
+                <a href="#agendar" class="footer-btn">Agendar Consulta</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Andréia Cardoso. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
