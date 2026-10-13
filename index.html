@@ -379,13 +379,13 @@
             <div class="quiz-container">
                 <span class="quiz-badge">✦ AVALIAÇÃO PARA TERAPIA PARTICULAR ✦</span>
                 <h2 class="quiz-title">A Terapia Sexual é ideal para o seu momento?</h2>
-                <p class="quiz-subtitle">O processo terapêutico exige comprometimento, dedicação mútua e investimento financeiro. Responda às perguntas abaixo para verificar se o seu perfil é compatível.</p>
+                <p class="quiz-subtitle">O processo terapêutico exige comprometimento, dedicação mútua e investimento financeiro. Responda às 5 perguntas abaixo para verificar se o seu perfil é compatível.</p>
 
                 <div id="quiz-card" class="quiz-card">
                     <div class="quiz-progress-bar">
-                        <div id="quiz-progress" class="quiz-progress-fill" style="width: 33%;"></div>
+                        <div id="quiz-progress" class="quiz-progress-fill" style="width: 20%;"></div>
                     </div>
-                    <span id="quiz-step" class="quiz-step">Pergunta 1 de 3</span>
+                    <span id="quiz-step" class="quiz-step">Pergunta 1 de 5</span>
 
                     <div id="quiz-step-container">
                         <!-- Perguntas injetadas via JavaScript -->
@@ -568,6 +568,16 @@
     <script>
         const questions = [
             {
+                q: "Se você pudesse destravar apenas UMA dessas áreas na sua vida íntima hoje, qual seria?",
+                options: [
+                    { text: "A) Resgatar meu desejo e libido de forma prática no dia a dia.", score: 'A' },
+                    { text: "B) Destravar inseguranças, ansiedade de desempenho e bloqueios na hora H.", score: 'A' },
+                    { text: "C) Melhorar a sintonia, o diálogo e a cumplicidade a dois.", score: 'A' },
+                    { text: "D) Entender questões pontuais sobre meu corpo ou sexualidade.", score: 'A' },
+                    { text: "E) Outros", score: 'B' }
+                ]
+            },
+            {
                 q: "Quando o assunto é a sua vida íntima atual, qual destas frases melhor descreve o seu momento?",
                 options: [
                     { text: "A) Sinto uma queda persistente no desejo, na libido ou um distanciamento na relação que está me gerando sofrimento ou frustração.", score: 'A' },
@@ -579,6 +589,13 @@
                 options: [
                     { text: "A) Sim, sinto que esses obstáculos travam minha liberdade e preciso de ajuda especializada para superá-los.", score: 'A' },
                     { text: "B) Não vejo grandes travas, levo a minha intimidade de forma bem casual.", score: 'B' }
+                ]
+            },
+            {
+                q: "Quanto essa situação tem gerado sofrimento, frustração, ansiedade ou até mesmo distanciamento na sua intimidade ou autoestima?",
+                options: [
+                    { text: "A) Muito; isso afeta diretamente o meu bem-estar, a minha confiança e o clima a dois.", score: 'A' },
+                    { text: "B) Quase nada; sinto que é algo passageiro ou sem grande impacto.", score: 'B' }
                 ]
             },
             {
@@ -598,7 +615,7 @@
             const stepLabel = document.getElementById('quiz-step');
             const progressBar = document.getElementById('quiz-progress');
 
-            stepLabel.innerText = `Pergunta ${currentStep + 1} de ${questions.length}`;
+            stepLabel.innerText = `Pergunta ${currentStep + 1} de${questions.length}`;
             progressBar.style.width = `${((currentStep + 1) / questions.length) * 100}%`;
 
             const currentQ = questions[currentStep];
@@ -627,6 +644,7 @@
             const container = document.getElementById('quiz-step-container');
             document.getElementById('quiz-step').style.display = 'none';
 
+            // O usuário precisa pontuar 'A' em todas as perguntas para desbloquear o bate-papo
             const isQualified = userScores.every(s => s === 'A');
 
             if (isQualified) {
@@ -638,45 +656,4 @@
                         
                         <div class="quiz-form-group">
                             <label for="user-name">Nome Completo:</label>
-                            <input type="text" id="user-name" placeholder="Digite seu nome">
-                        </div>
-                        <div class="quiz-form-group">
-                            <label for="user-phone">Telefone / WhatsApp (com DDD):</label>
-                            <input type="tel" id="user-phone" placeholder="(11) 99999-9999">
-                        </div>
-
-                        <button onclick="sendToWhatsapp()" class="quiz-cta-btn">💬 AGENDAR MEU BATE-PAPO DE 20 MINUTOS</button>
-                    </div>
-                `;
-            } else {
-                container.innerHTML = `
-                    <div class="quiz-result">
-                        <h3>Obrigada por responder à nossa avaliação!</h3>
-                        <p>Pelas suas respostas, percebemos que no momento atual você busca conteúdos informativos ou formatos diferentes do atendimento clínico particular. O melhor caminho para você continuar evoluindo no seu ritmo é acompanhar as orientações diárias no Instagram.</p>
-                        <a href="https://instagram.com" target="_blank" class="quiz-insta-btn">📸 SEGUIR NO INSTAGRAM</a>
-                    </div>
-                `;
-            }
-        }
-
-        function sendToWhatsapp() {
-            const name = document.getElementById('user-name').value.trim();
-            const phone = document.getElementById('user-phone').value.trim();
-
-            if (!name || !phone) {
-                alert("Por favor, preencha seu nome e telefone para prosseguir.");
-                return;
-            }
-
-            const textMsg = `Olá, Andréia! Gostaria de marcar um bate-papo de 20 min. gratuito para entender se a terapia sexual poderá me ajudar.\n\nNome: ${name}\nTelefone: ${phone}`;
-            const whatsappUrl = `https://api.whatsapp.com/send?phone=5511952182049&text=${encodeURIComponent(textMsg)}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            renderStep();
-        });
-    </script>
-</body>
-</html>
+                            <input type="text" id="user-
