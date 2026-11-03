@@ -3,776 +3,737 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andréia Cardoso | Sexologia & Desenvolvimento Íntimo</title>
+    <title>Andréia Cardoso | Sexologia & Terapia Sexual</title>
+    <meta name="description" content="O prazer não tem prazo de validade. Rompa com o óbvio, liberte seus desejos e redescubra a intensidade de uma vida íntima plena e segura.">
+    
+    <!-- Prévia para o WhatsApp e Redes Sociais (Open Graph) -->
+    <meta property="og:title" content="Andréia Cardoso | Sexologia & Terapia Sexual">
+    <meta property="og:description" content="O prazer não tem prazo de validade. Rompa com o óbvio, liberte seus desejos e redescubra a intensidade de uma vida íntima plena e segura.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Lato', 'sans-serif'],
+                        sub: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            offWhite: '#F5F2EC',
+                            champagne: '#E5D9C5',
+                            taupe: '#A89282',
+                            gold: '#C4A66B',
+                            graphite: '#262626',
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -15px rgba(38, 38, 38, 0.05)',
+                        'floating': '0 30px 60px -12px rgba(168, 146, 130, 0.15)',
+                        'card-hover': '0 25px 50px -12px rgba(196, 166, 107, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg-color: #f7f4ee;       /* Fundo principal mais aconchegante */
-            --card-bg: #ece6dc;        /* Cards com contraste mais evidente */
-            --text-color: #1f1d1c;     /* Texto principal bem escuro para máxima legibilidade */
-            --accent-color: #b89768;   /* Tom dourado/bronze mais vivo e expressivo */
-            --accent-hover: #a28153;   /* Tom de hover mais forte */
-            --dark-bg: #11100f;        /* Fundo escuro profundo (topo e rodapé) */
-            --border-color: #d6ccbe;   /* Bordas mais definidas */
+        .editorial-line {
+            position: relative;
+        }
+        .editorial-line::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 1px;
+            background-color: #C4A66B;
+        }
+        html {
+            scroll-behavior: smooth;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        /* BOTÃO FLUTUANTE DE WHATSAPP HARMONIZADO COM A PALETA DA MARCA */
+        @keyframes pulse-gold {
+            0% {
+                box-shadow: 0 0 0 0 rgba(196, 166, 107, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 14px rgba(196, 166, 107, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(196, 166, 107, 0);
+            }
         }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* BARRA SUPERIOR */
-        .top-bar {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            text-align: center;
-            padding: 12px 15px;
-            font-size: 12px;
-            letter-spacing: 1.2px;
-            font-weight: 600;
-        }
-
-        /* NAVEGAÇÃO */
-        .main-nav {
-            background-color: var(--dark-bg);
-            border-bottom: 2px solid var(--accent-color);
-            padding: 15px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo-brand {
+        .whatsapp-float-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 50;
             display: flex;
             align-items: center;
             gap: 12px;
-            text-decoration: none;
         }
-
-        .site-logo {
-            height: 52px;
-            width: 52px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color);
-        }
-
-        .brand-text h2 {
-            color: #ffffff;
-            font-size: 15px;
-            letter-spacing: 1.5px;
-        }
-
-        .brand-text span {
-            color: var(--accent-color);
-            font-size: 10px;
-            letter-spacing: 2px;
-            display: block;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: #f0eae1;
-            text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 1.5px;
+        .whatsapp-tooltip {
+            background-color: #ffffff;
+            color: #262626;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 500;
-            transition: color 0.3s;
+            box-shadow: 0 10px 25px rgba(38, 38, 38, 0.08);
+            border: 1px solid #E5D9C5;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
         }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
+        .whatsapp-float-container:hover .whatsapp-tooltip {
+            opacity: 1;
+            transform: translateX(0);
         }
-
-        .btn-primary-nav {
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-
-        .btn-primary-nav:hover {
-            background-color: var(--accent-hover);
-            color: #fff;
-        }
-
-        /* HERO SECTION */
-        .hero-section {
-            padding: 90px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-container {
+        .whatsapp-btn {
+            background-color: #262626;
+            color: #C4A66B;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
-            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid #C4A66B;
+            box-shadow: 0 10px 25px rgba(38, 38, 38, 0.15);
+            transition: all 0.3s ease;
+            animation: pulse-gold 2.5s infinite;
+        }
+        .whatsapp-btn:hover {
+            background-color: #C4A66B;
+            color: #262626;
+            transform: scale(1.08);
+            border-color: #262626;
         }
 
-        .hero-content .tagline {
-            display: inline-block;
-            color: var(--accent-color);
-            font-size: 12px;
-            letter-spacing: 2.5px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(30px, 4.5vw, 50px);
-            font-weight: 400;
-            line-height: 1.25;
-            margin-bottom: 25px;
-            color: #1a1817;
-        }
-
-        .hero-content p {
-            font-size: 17px;
-            color: #4a4542;
-            margin-bottom: 15px;
-        }
-
-        .highlight-text {
-            font-weight: 700;
-            color: var(--text-color);
-        }
-
-        .hero-cta {
-            margin-top: 35px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: flex-start;
-        }
-
-        .btn-primary {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            padding: 16px 32px;
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 1.5px;
-            font-weight: bold;
-            border-radius: 4px;
-            border: 1px solid var(--dark-bg);
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: var(--dark-bg);
-        }
-
-        .sub-cta {
-            font-size: 11px;
-            color: #66605b;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        /* SEÇÃO DE AVALIAÇÃO */
+        /* ESTILOS DO QUIZ INTERATIVO COM PALETA DA MARCA */
         .quiz-section {
-            background-color: var(--card-bg);
-            padding: 90px 5%;
-            border-top: 2px solid var(--border-color);
-            border-bottom: 2px solid var(--border-color);
+            background: linear-gradient(180deg, #F5F2EC 0%, #E5D9C5 100%);
+            padding: 60px 24px;
+            font-family: inherit;
+            color: #262626;
+            border-radius: 24px;
+            margin: 40px auto 20px auto;
+            border: 1px solid #E5D9C5;
+            box-shadow: 0 20px 50px -10px rgba(196, 166, 107, 0.15);
+            position: relative;
+            overflow: hidden;
+            max-width: 900px;
         }
-
+        .quiz-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #C4A66B 0%, #E5D9C5 50%, #C4A66B 100%);
+        }
         .quiz-container {
-            max-width: 800px;
+            max-width: 680px;
             margin: 0 auto;
             text-align: center;
         }
-
-        .section-tag {
+        .quiz-badge {
+            display: inline-block;
             font-size: 11px;
-            letter-spacing: 2.5px;
-            color: #6b635b;
-            display: block;
-            margin-bottom: 15px;
-            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #C4A66B;
+            font-weight: 700;
+            background: #ffffff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid #E5D9C5;
+            box-shadow: 0 2px 8px rgba(38, 38, 38, 0.03);
+            margin-bottom: 12px;
         }
-
-        .quiz-container h2 {
-            font-size: 34px;
-            font-weight: 400;
-            margin-bottom: 15px;
-            color: #1a1817;
+        .quiz-title {
+            font-size: 28px;
+            margin: 12px 0;
+            color: #262626;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
         }
-
-        .quiz-container p {
-            color: #554f4b;
-            margin-bottom: 40px;
-            font-size: 16px;
+        .quiz-subtitle {
+            font-size: 15px;
+            color: #555555;
+            margin-bottom: 30px;
+            font-weight: 300;
         }
-
         .quiz-card {
             background: #ffffff;
-            padding: 45px;
-            border-radius: 8px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 1px solid #E5D9C5;
+            border-radius: 16px;
+            padding: 32px 24px;
+            box-shadow: 0 15px 35px rgba(38, 38, 38, 0.06);
             text-align: left;
-            border: 1px solid var(--border-color);
         }
-
+        .quiz-progress-bar {
+            background: #F5F2EC;
+            height: 6px;
+            border-radius: 3px;
+            margin-bottom: 18px;
+            overflow: hidden;
+            border: 1px solid #E5D9C5;
+        }
+        .quiz-progress-fill {
+            background: #C4A66B;
+            height: 100%;
+            transition: width 0.3s ease;
+        }
         .quiz-step {
-            font-size: 11px;
-            color: var(--accent-color);
-            letter-spacing: 1.5px;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .quiz-card h3 {
-            font-size: 21px;
+            font-size: 12px;
+            color: #A89282;
             font-weight: 600;
-            margin-bottom: 25px;
-            color: #1a1817;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-
+        .quiz-question {
+            font-size: 18px;
+            color: #262626;
+            margin: 16px 0 22px 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
         .quiz-options {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
-
-        .quiz-opt {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            padding: 16px 20px;
+        .quiz-btn {
+            background: #F5F2EC;
+            border: 1px solid #E5D9C5;
+            padding: 14px 18px;
+            border-radius: 10px;
             text-align: left;
-            border-radius: 6px;
             font-size: 14px;
-            color: #2c2a29;
-            font-weight: 500;
+            color: #262626;
             cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .quiz-opt:hover {
-            border-color: var(--accent-color);
-            background: #ffffff;
-            color: #000;
-        }
-
-        /* MANIFESTO */
-        .manifesto-section {
-            padding: 110px 5%;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .manifesto-lead {
-            font-size: 19px;
-            color: #383431;
-            line-height: 1.8;
-            margin-bottom: 35px;
-        }
-
-        .quote-box {
-            font-style: italic;
-            font-size: 21px;
-            color: #2c2a29;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 25px;
-            margin: 45px auto;
-            max-width: 750px;
-            text-align: left;
+            transition: all 0.25s ease;
             font-weight: 400;
         }
-
-        /* PÚBLICO ALVO */
-        .audience-section {
-            background-color: var(--card-bg);
-            padding: 90px 5%;
-            border-top: 2px solid var(--border-color);
-            border-bottom: 2px solid var(--border-color);
+        .quiz-btn:hover {
+            background: #C4A66B;
+            color: #ffffff;
+            border-color: #C4A66B;
+            transform: translateX(4px);
         }
-
-        .audience-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .audience-container h2 {
-            font-size: 34px;
-            margin-bottom: 50px;
-            font-weight: 400;
-            color: #1a1817;
-        }
-
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .quiz-form-group {
+            margin-bottom: 16px;
             text-align: left;
         }
-
-        .audience-card {
-            background: #ffffff;
-            padding: 40px;
+        .quiz-form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 6px;
+        }
+        .quiz-form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #E5D9C5;
             border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.04);
-            border: 1px solid var(--border-color);
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: #F5F2EC;
+            color: #262626;
         }
-
-        .check-icon {
-            color: var(--accent-color);
+        .quiz-form-group input:focus {
+            outline: none;
+            border-color: #C4A66B;
+            background-color: #ffffff;
+        }
+        .quiz-result {
+            text-align: center;
+        }
+        .quiz-result h3 {
             font-size: 22px;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .audience-card h3 {
-            font-size: 21px;
+            color: #262626;
             margin-bottom: 12px;
+            font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
-            color: #1a1817;
         }
-
-        .audience-card p {
-            color: #554f4b;
+        .quiz-result p {
             font-size: 14px;
-        }
-
-        /* ÁREAS DE FOCO */
-        .services-section {
-            padding: 110px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .services-section h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
-            font-weight: 400;
-            color: #1a1817;
-        }
-
-        .section-desc {
-            color: #554f4b;
-            margin-bottom: 60px;
-            font-size: 16px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            text-align: left;
-        }
-
-        .service-card {
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .star-icon {
-            color: var(--accent-color);
-            font-size: 20px;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            font-size: 19px;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: #1a1817;
-        }
-
-        .service-card p {
-            color: #554f4b;
-            font-size: 14px;
+            color: #555555;
             line-height: 1.6;
+            margin-bottom: 18px;
         }
-
-        /* CONSCIENTIZAÇÃO */
-        .awareness-section {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            padding: 90px 5%;
-            text-align: center;
-            border-top: 2px solid var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
+        .quiz-cta-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 16px 28px;
+            font-weight: 700;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+            transition: all 0.25s ease;
+            width: 100%;
+            letter-spacing: 0.5px;
         }
-
-        .awareness-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .quiz-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
         }
-
-        .awareness-container .section-tag {
-            color: var(--accent-color);
-        }
-
-        .awareness-quote {
-            font-size: 25px;
-            font-weight: 300;
-            line-height: 1.5;
-            font-style: italic;
-            color: #f7f4ee;
-        }
-
-        /* RODAPÉ */
-        .site-footer {
-            background-color: #0c0b0a;
-            color: #b3aba1;
-            padding: 70px 5% 40px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-            padding-bottom: 45px;
-        }
-
-        .footer-brand h3 {
-            color: #ffffff;
-            font-size: 17px;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .footer-brand p {
-            font-size: 11px;
-            color: var(--accent-color);
-            letter-spacing: 1.5px;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .footer-brand small {
-            font-size: 12px;
-            color: #999086;
-        }
-
-        .footer-nav h4, .footer-contact h4 {
-            color: #ffffff;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-        }
-
-        .footer-nav ul {
-            list-style: none;
-        }
-
-        .footer-nav li {
+        .quiz-insta-btn {
+            display: inline-block;
+            background-color: #262626;
+            color: #C4A66B !important;
+            text-decoration: none;
+            padding: 14px 28px;
+            font-weight: 700;
+            border-radius: 30px;
+            border: 1px solid #C4A66B;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(38, 38, 38, 0.1);
             margin-bottom: 10px;
         }
-
-        .footer-nav a {
-            color: #b3aba1;
-            text-decoration: none;
-            font-size: 13px;
-            transition: color 0.3s;
+        .quiz-insta-btn:hover {
+            background-color: #C4A66B;
+            color: #262626 !important;
         }
-
-        .footer-nav a:hover {
-            color: var(--accent-color);
-        }
-
-        .btn-whatsapp-footer {
+        .quiz-back-link {
             display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 12px 24px;
-            text-decoration: none;
             font-size: 12px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            transition: background 0.3s;
+            color: #A89282;
+            text-decoration: underline;
+            margin-top: 10px;
+            transition: color 0.2s;
         }
-
-        .btn-whatsapp-footer:hover {
-            background-color: #fff;
-        }
-
-        .footer-disclaimer {
-            max-width: 1200px;
-            margin: 35px auto 0;
-            font-size: 11px;
-            color: #8a8279;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        .footer-disclaimer strong {
-            color: #b8af9f;
-        }
-
-        /* BOTÃO FLUTUANTE WHATSAPP */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366 !important;
-            color: #ffffff !important;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            z-index: 9999;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        @media (min-width: 768px) {
-            .hero-container {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .hero-content {
-                max-width: 60%;
-            }
+        .quiz-back-link:hover {
+            color: #262626;
         }
     </style>
 </head>
-<body>
+<body class="bg-brand-offWhite text-brand-graphite font-sans antialiased selection:bg-brand-champagne">
 
-    <!-- BARRA SUPERIOR -->
-    <header class="top-bar">
-        <p>🔒 ATENDIMENTO PARTICULAR 100% ONLINE, INTERNACIONAL E SOB ESTRITO SIGILO PROFISSIONAL.</p>
-    </header>
+    <!-- BARRA DE AVISO SUPERIOR -->
+    <div class="bg-brand-graphite text-brand-offWhite text-xs py-3.5 px-4 text-center font-sub uppercase tracking-widest border-b border-brand-gold/30 sticky top-0 z-50">
+        🔒 Atendimento Particular 100% Online, Internacional e Sob Estrito Sigilo Profissional.
+    </div>
 
-    <!-- NAVEGAÇÃO -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="#" class="logo-brand">
-                <img src="LOGO.png" alt="Andréia Cardoso Logo" class="site-logo">
-                <div class="brand-text">
-                    <h2>ANDRÉIA CARDOSO</h2>
-                    <span>SEXOLOGIA</span>
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="bg-brand-graphite text-brand-offWhite border-b border-brand-gold/30 sticky top-[45px] z-40 transition-all duration-300 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-5 group cursor-pointer">
+                <!-- LOGO NOVA INTEGRADA -->
+                <div class="relative w-14 h-14 rounded-full border border-brand-gold flex items-center justify-center transition-all duration-700 bg-brand-gold/10 p-1 overflow-hidden">
+                    <div class="absolute inset-[3px] border border-brand-gold/40 rounded-full pointer-events-none"></div>
+                    <img src="./LOGO.png" alt="Andréia Cardoso Logo" class="w-full h-full object-cover rounded-full">
                 </div>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#abordagem">ABORDAGEM</a></li>
-                <li><a href="#publico">PÚBLICO</a></li>
-                <li><a href="#foco">COMO POSSO AJUDAR</a></li>
-                <li><a href="#avaliacao">AVALIAÇÃO</a></li>
-            </ul>
-            <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn-primary-nav">FALAR NO WHATSAPP</a>
+                <div class="space-y-0.5">
+                    <span class="font-serif text-xl md:text-2xl tracking-wide text-brand-offWhite block uppercase font-bold leading-none group-hover:text-brand-gold transition-colors duration-300">
+                        Andréia Cardoso
+                    </span>
+                    <span class="font-sub text-[9px] md:text-[10px] tracking-[0.3em] text-brand-gold block uppercase font-bold leading-none">
+                        Sexologia & Terapia Sexual
+                    </span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 font-sub text-[11px] tracking-widest uppercase font-semibold">
+                <a href="#abordagem" class="text-brand-offWhite/80 hover:text-brand-gold transition-colors">Abordagem</a>
+                <a href="#para-quem" class="text-brand-offWhite/80 hover:text-brand-gold transition-colors">Público</a>
+                <a href="#tratamentos" class="text-brand-offWhite/80 hover:text-brand-gold transition-colors">Como Posso Ajudar</a>
+                <a href="#quiz-intimo" class="text-brand-offWhite/80 hover:text-brand-gold transition-colors">Avaliação</a>
+                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="bg-brand-gold hover:bg-white text-brand-graphite px-6 py-3 rounded transition-all duration-300 shadow-premium uppercase tracking-widest text-[10px] font-bold">Falar no WhatsApp</a>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="tagline">ACOLHIMENTO ESPECIALIZADO & INTERNACIONAL</span>
-                <h1>O prazer não tem prazo de validade. Rompa com o óbvio, liberte seus desejos e redescubra a intensidade de uma vida íntima plena e segura.</h1>
-                <p>O corpo muda, e muitas vezes, parece que você se desconectou de si mesma.</p>
+    <header class="max-w-7xl mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center relative">
+        <div class="lg:col-span-7 space-y-8 text-center lg:text-left z-10">
+            <div class="inline-block text-xs font-sub font-semibold tracking-[0.2em] text-brand-gold uppercase border-b border-brand-gold/60 pb-1">
+                Acolhimento Clínico Especializado & Internacional
+            </div>
+            
+            <h1 class="font-serif text-4xl md:text-6xl text-brand-graphite leading-[1.15] font-light">
+                O prazer não tem prazo de validade. Rompa com o óbvio, liberte seus desejos e redescubra a intensidade de uma vida íntima plena e segura.
+            </h1>
+
+            <div class="text-base md:text-lg text-brand-graphite/85 space-y-4 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
+                <p>O corpo muda, os hormônios oscilam e, muitas vezes, parece que você se desconectou de si mesma.</p>
                 <p>É comum sentir diminuição da libido, do desejo, desconforto ou até mesmo uma insegurança que antes não existia.</p>
-                <p class="highlight-text">Mas você não precisa passar por isso sozinha e nem se resignar a uma vida sem prazer.</p>
-                <div class="hero-cta">
-                    <a href="#avaliacao" class="btn-primary">✦ FAZER AVALIAÇÃO DE PERFIL</a>
-                    <span class="sub-cta">ATENDIMENTO INDIVIDUAL, ONLINE E INTERNACIONAL.</span>
+                <p class="font-serif text-brand-gold text-2xl font-normal italic pt-2">Mas você não precisa passar por isso sozinha e nem se resignar a uma vida sem prazer.</p>
+            </div>
+
+            <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                <a href="#quiz-intimo" class="w-full sm:w-auto bg-brand-graphite hover:bg-brand-gold text-brand-offWhite text-center font-sub font-medium tracking-widest uppercase text-xs px-8 py-4 rounded shadow-premium hover:shadow-floating transition-all duration-300 transform hover:-translate-y-0.5">
+                    ✦ Fazer Avaliação de Perfil
+                </a>
+                <span class="font-sub text-[10px] tracking-wider text-brand-taupe max-w-[200px] text-center sm:text-left uppercase font-medium">Atendimento individual, online e internacional.</span>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center relative">
+            <div class="w-72 h-96 md:w-full md:max-w-md rounded-t-[120px] rounded-b-xl shadow-floating overflow-hidden aspect-[3/4] border border-brand-champagne p-3 bg-white transition-all duration-500 hover:scale-[1.01] hover:border-brand-gold/50">
+                <img src="./andreia.jpg" alt="Andréia Cardoso" class="w-full h-full object-cover rounded-t-[110px] rounded-lg bg-brand-champagne">
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= QUIZ / AVALIAÇÃO DE PERFIL ================= -->
+    <div class="px-6">
+        <div id="quiz-intimo" class="quiz-section">
+            <div class="quiz-container">
+                <span class="quiz-badge">✦ AVALIAÇÃO ✦</span>
+                <h2 class="quiz-title">O acompanhamento em Sexologia é ideal para o seu momento?</h2>
+                <p class="quiz-subtitle">O processo exige comprometimento, dedicação mútua e investimento. Responda às 5 perguntas abaixo para verificar se o seu perfil é compatível.</p>
+
+                <div id="quiz-card" class="quiz-card">
+                    <div class="quiz-progress-bar">
+                        <div id="quiz-progress" class="quiz-progress-fill" style="width: 20%;"></div>
+                    </div>
+                    <span id="quiz-step" class="quiz-step">Pergunta 1 de 5</span>
+
+                    <div id="quiz-step-container">
+                        <!-- Perguntas injetadas via JavaScript -->
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <!-- ================= FIM DO QUIZ ================= -->
 
-    <!-- SEÇÃO DE AVALIAÇÃO / QUIZ -->
-    <section id="avaliacao" class="quiz-section">
-        <div class="quiz-container">
-            <span class="section-tag">✦ AVALIAÇÃO ✦</span>
-            <h2>Você está no momento certo para transformar a sua vida íntima?</h2>
-            <p>O processo de desenvolvimento íntimo exige comprometimento, dedicação mútua e investimento pessoal. Responda às 5 perguntas abaixo para verificar se o seu perfil é compatível.</p>
+    <section id="abordagem" class="bg-brand-champagne/25 text-brand-graphite py-24 px-6 relative overflow-hidden border-y border-brand-champagne/60 mt-16">
+        <div class="max-w-4xl mx-auto text-center space-y-8 relative z-10">
+            <span class="font-sub text-xs tracking-[0.25em] text-brand-gold uppercase font-bold block">O Manifesto</span>
+            
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-graphite font-light max-w-2xl mx-auto leading-relaxed">
+                Um espaço de acolhimento clínico e livre de julgamentos
+            </h2>
 
-            <div class="quiz-card">
-                <span class="quiz-step">PERGUNTA 1 DE 5</span>
-                <h3>Se você pudesse destravar apenas UMA dessas áreas na sua vida íntima hoje, qual seria?</h3>
-                <div class="quiz-options">
-                    <button class="quiz-opt">A) Resgatar meu desejo e libido de forma prática no dia a dia.</button>
-                    <button class="quiz-opt">B) Destravar inseguranças, ansiedade de desempenho e bloqueios na hora H.</button>
-                    <button class="quiz-opt">C) Melhorar a sintonia, o diálogo e a cumplicidade a dois.</button>
-                    <button class="quiz-opt">D) Entender questões pontuais sobre meu corpo ou sexualidade.</button>
-                    <button class="quiz-opt">E) Outras necessidades e buscas íntimas.</button>
-                </div>
-            </div>
-        </div>
-    </section>
+            <p class="text-base md:text-lg text-brand-graphite/85 leading-relaxed font-light max-w-3xl mx-auto">
+                Desenhado para que você compreenda suas dificuldades e queixas íntimas, resgatando o seu bem-estar através de um olhar científico e profundamente humano. O meu papel é te guiar na reconexão com o seu corpo e com o seu desejo nesta nova fase da vida, onde quer que você esteja no mundo.
+            </p>
 
-    <!-- O MANIFESTO / ABORDAGEM -->
-    <section id="abordagem" class="manifesto-section">
-        <div class="manifesto-container">
-            <span class="section-tag">O MANIFESTO</span>
-            <h2>Um espaço de acolhimento, livre de julgamentos</h2>
-            <p class="manifesto-lead">Desenhado para que você compreenda suas dificuldades e queixas íntimas, resgatando o seu bem-estar. O meu papel é te guiar na reconexão com o seu corpo e com o seu desejo nesta nova fase da vida, onde quer que você esteja no mundo.</p>
-            <blockquote class="quote-box">
+            <div class="w-16 h-[1px] bg-brand-gold mx-auto my-6"></div>
+
+            <p class="text-brand-gold font-serif text-2xl md:text-3xl italic max-w-2xl mx-auto font-normal leading-relaxed">
                 "Um porto seguro para você compreender essas mudanças, resgatar o seu desejo e vivenciar a sua soberania íntima com toda a plenitude que a maturidade proporciona."
-            </blockquote>
+            </p>
         </div>
     </section>
 
-    <!-- PÚBLICO ALVO -->
-    <section id="publico" class="audience-section">
-        <div class="audience-container">
-            <span class="section-tag">ACOLHIMENTO PLURAL</span>
-            <h2>Para quem é o atendimento?</h2>
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <span class="check-icon">✓</span>
-                    <h3>Mulheres</h3>
-                    <p>Que desejam compreender melhor sua sexualidade e se reconectar com o próprio corpo.</p>
+    <section id="para-quem" class="py-24 px-6 bg-white border-b border-brand-champagne/40">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="font-sub text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Acolhimento Plural</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-graphite font-light">Para quem é o atendimento?</h2>
+                <div class="w-12 h-[1px] bg-brand-gold/60 mx-auto pt-2"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="border border-brand-champagne/60 p-8 rounded-xl bg-brand-offWhite/30 hover:border-brand-gold transition-all duration-300">
+                    <span class="text-brand-gold text-xl block mb-4">✓</span>
+                    <p class="font-serif text-lg text-brand-graphite font-medium mb-2">Mulheres</p>
+                    <p class="text-sm text-brand-graphite/75 font-light leading-relaxed">Que desejam compreender melhor sua sexualidade e se reconectar com o próprio corpo.</p>
                 </div>
-                <div class="audience-card">
-                    <span class="check-icon">✓</span>
-                    <h3>Homens</h3>
-                    <p>Que enfrentam dificuldades relacionadas ao desempenho, desejo ou autoconfiança.</p>
+
+                <div class="border border-brand-champagne/60 p-8 rounded-xl bg-brand-offWhite/30 hover:border-brand-gold transition-all duration-300">
+                    <span class="text-brand-gold text-xl block mb-4">✓</span>
+                    <p class="font-serif text-lg text-brand-graphite font-medium mb-2">Homens</p>
+                    <p class="text-sm text-brand-graphite/75 font-light leading-relaxed">Que enfrentam dificuldades relacionadas ao desempenho, desejo ou autoconfiança.</p>
                 </div>
-                <div class="audience-card">
-                    <span class="check-icon">✓</span>
-                    <h3>Casais</h3>
-                    <p>Que desejam fortalecer a intimidade, reacender a cumplicidade e melhorar a comunicação.</p>
+
+                <div class="border border-brand-champagne/60 p-8 rounded-xl bg-brand-offWhite/30 hover:border-brand-gold transition-all duration-300">
+                    <span class="text-brand-gold text-xl block mb-4">✓</span>
+                    <p class="font-serif text-lg text-brand-graphite font-medium mb-2">Casais</p>
+                    <p class="text-sm text-brand-graphite/75 font-light leading-relaxed">Que desejam fortalecer a intimidade, reacender a cumplicidade e melhorar a comunicação.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ÁREAS DE FOCO -->
-    <section id="foco" class="services-section">
-        <div class="services-container">
-            <span class="section-tag">PRINCIPAIS BUSCAS</span>
-            <h2>Como posso ajudar?</h2>
-            <p class="section-desc">Abaixo estão algumas das principais buscas e temas trabalhados nas sessões de forma personalizada:</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <span class="star-icon">✦</span>
-                    <h3>Resgatar o Desejo & Libido</h3>
-                    <p>Estratégias práticas e investigação focadas para a redução ou ausência persistente do desejo sexual.</p>
+    <section id="tratamentos" class="py-24 lg:py-32 px-6 max-w-6xl mx-auto">
+        <div class="max-w-3xl mb-16 space-y-4">
+            <span class="font-sub text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Demandas Clínicas</span>
+            <h2 class="font-serif text-3xl md:text-5xl text-brand-graphite editorial-line pb-4 font-light">
+                Como posso ajudar?
+            </h2>
+            <p class="text-brand-taupe font-light text-base">Abaixo estão algumas das principais queixas e temas trabalhados em consultório de forma personalizada:</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-tr from-white to-brand-champagne/30 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
+                <div>
+                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
+                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Baixa Libido</h3>
+                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Acompanhamento especializado para o resgate e fortalecimento do desejo e da libido no dia a dia.</p>
                 </div>
-                <div class="service-card">
-                    <span class="star-icon">✦</span>
-                    <h3>Falta de Conexão</h3>
-                    <p>Apoio em momentos de distanciamento afetivo e desgaste na rotina do relacionamento.</p>
+            </div>
+
+            <div class="bg-gradient-to-b from-white to-brand-champagne/20 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
+                <div>
+                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
+                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Falta de Conexão</h3>
+                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Apoio em momentos de distanciamento afetivo e desgaste na rotina do relacionamento.</p>
                 </div>
-                <div class="service-card">
-                    <span class="star-icon">✦</span>
-                    <h3>Comunicação Íntima</h3>
-                    <p>Superação de barreiras e dificuldades para expressar vontades, limites e fantasias a dois.</p>
+            </div>
+
+            <div class="bg-gradient-to-b from-white to-brand-champagne/20 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
+                <div>
+                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
+                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Comunicação Íntima</h3>
+                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Superação de barreiras e dificuldades para expressar vontades, limites e fantasias a dois.</p>
                 </div>
-                <div class="service-card">
-                    <span class="star-icon">✦</span>
-                    <h3>Autoestima & Inseguranças</h3>
-                    <p>Abordagem focada em travas, timidez excessiva, autocrítica e aceitação das mudanças corporais.</p>
+            </div>
+
+            <div class="bg-gradient-to-tr from-white to-brand-champagne/30 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
+                <div>
+                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
+                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Autoestima & Inseguranças</h3>
+                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Abordagem focada em travas, timidez excessiva, autocrítica e aceitação das mudanças corporais.</p>
                 </div>
-                <div class="service-card">
-                    <span class="star-icon">✦</span>
-                    <h3>Orientação para Casais</h3>
-                    <p>Direcionamento prático para alinhar expectativas, medos e resgatar a parceria na intimidade.</p>
+            </div>
+
+            <div class="bg-gradient-to-tr from-white to-brand-champagne/30 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
+                <div>
+                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
+                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Orientação para Casais</h3>
+                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Intervenções práticas para alinhar expectativas, medos e resgatar a parceria na intimidade.</p>
                 </div>
-                <div class="service-card">
-                    <span class="star-icon">✦</span>
-                    <h3>Educação & Bem-Estar</h3>
-                    <p>Desenvolvimento do autoconhecimento e melhora significativa na qualidade de vida sexual.</p>
+            </div>
+
+            <div class="bg-gradient-to-tr from-white to-brand-champagne/30 p-8 rounded-2xl border border-brand-champagne/80 shadow-premium flex flex-col justify-between group hover:border-brand-gold hover:shadow-card-hover transition-all duration-300 transform hover:-translate-y-1">
+                <div>
+                    <span class="text-brand-gold font-serif text-3xl block mb-4">✦</span>
+                    <h3 class="font-serif text-brand-graphite text-xl font-medium mb-2">Educação & Bem-Estar</h3>
+                    <p class="text-brand-graphite/80 text-sm font-light leading-relaxed">Desenvolvimento do autoconhecimento e melhora significativa na qualidade de vida sexual.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONSCIENTIZAÇÃO -->
-    <section class="awareness-section">
-        <div class="awareness-container">
-            <span class="section-tag">CONSCIENTIZAÇÃO</span>
-            <h2>Por que buscar orientação profissional?</h2>
-            <p class="awareness-quote">"A sexualidade faz parte da saúde e do bem-estar essencial de todo ser humano."</p>
+    <section class="bg-brand-champagne/15 py-24 px-6 border-y border-brand-champagne/50">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <span class="font-sub text-xs font-bold uppercase tracking-[0.2em] text-brand-gold">Conscientização</span>
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-graphite font-light">Por que buscar ajuda profissional?</h2>
+            <p class="text-brand-graphite/80 font-light text-base md:text-lg leading-relaxed max-w-2xl mx-auto italic">
+                "A sexualidade faz parte da saúde e do bem-estar essencial de todo ser humano."
+            </p>
         </div>
     </section>
 
-    <!-- RODAPÉ & DISCLAIMER JURÍDICO -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>ANDRÉIA CARDOSO</h3>
-                <p>SEXOLOGIA</p>
-                <small>Atendimento particular 100% online, internacional, seguro e sob estrito sigilo profissional.</small>
+    <!-- ================= RODAPÉ ================= -->
+    <footer class="bg-brand-graphite text-brand-offWhite py-16 px-6 border-t border-brand-gold/30">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center text-center md:text-left">
+            <div class="space-y-3">
+                <span class="font-serif text-2xl tracking-wide uppercase font-bold text-brand-offWhite block">
+                    Andréia Cardoso
+                </span>
+                <span class="font-sub text-[10px] tracking-[0.3em] text-brand-gold block uppercase font-bold">
+                    Sexologia & Terapia Sexual
+                </span>
+                <p class="text-brand-taupe text-xs font-light max-w-xs mx-auto md:mx-0">
+                    Atendimento particular 100% online, internacional, seguro e sob estrito sigilo profissional.
+                </p>
             </div>
-            
-            <div class="footer-nav">
-                <h4>NAVEGAÇÃO</h4>
-                <ul>
-                    <li><a href="#abordagem">Abordagem</a></li>
-                    <li><a href="#publico">Público</a></li>
-                    <li><a href="#foco">Como Posso Ajudar</a></li>
-                    <li><a href="#avaliacao">Avaliação</a></li>
+
+            <div class="space-y-3">
+                <p class="font-sub text-xs uppercase tracking-widest text-brand-gold font-bold">Navegação</p>
+                <ul class="space-y-2 text-xs font-sub text-brand-taupe">
+                    <li><a href="#abordagem" class="hover:text-brand-offWhite transition-colors">Abordagem</a></li>
+                    <li><a href="#para-quem" class="hover:text-brand-offWhite transition-colors">Público</a></li>
+                    <li><a href="#tratamentos" class="hover:text-brand-offWhite transition-colors">Como Posso Ajudar</a></li>
+                    <li><a href="#quiz-intimo" class="hover:text-brand-offWhite transition-colors">Avaliação</a></li>
                 </ul>
             </div>
 
-            <div class="footer-contact">
-                <h4>CONTATO DIRETO</h4>
-                <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn-whatsapp-footer">💬 FALAR NO WHATSAPP</a>
+            <div class="space-y-4 flex flex-col items-center md:items-end">
+                <p class="font-sub text-xs uppercase tracking-widest text-brand-gold font-bold">Contato Direto</p>
+                <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="bg-brand-gold hover:bg-white text-brand-graphite font-sub text-xs uppercase font-bold tracking-widest px-6 py-3 rounded transition-all duration-300 shadow-premium">
+                    💬 Falar no WhatsApp
+                </a>
             </div>
         </div>
 
-        <!-- AVISO LEGAL INTERNACIONAL (DISCLAIMER) -->
-        <div class="footer-disclaimer">
-            <p><strong>Aviso Legal / Disclaimer:</strong> Os serviços prestados por Andréia Cardoso possuem caráter exclusivo de mentoria, educação íntima e desenvolvimento pessoal. O trabalho não constitui psicoterapia, atendimento psicológico, psiquiátrico ou tratamento de saúde mental, não substituindo diagnósticos ou acompanhamentos por profissionais de medicina ou psicologia licenciados em suas respectivas jurisdições.</p>
-            <p style="margin-top: 10px;">© 2026 Andréia Cardoso. Todos os direitos reservados. Atendimento internacional regulamentado e confidencial.</p>
+        <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-white/10 text-center text-xs text-brand-taupe/70 font-light">
+            <p>&copy; 2026 Andréia Cardoso. Todos os direitos reservados. Atendimento internacional regulamentado e confidencial.</p>
         </div>
     </footer>
+    <!-- ================= FIM DO RODAPÉ ================= -->
 
-    <!-- BOTÃO FLUTUANTE WHATSAPP -->
-    <a href="https://wa.me/SEUNUMERO" class="whatsapp-float" target="_blank" title="Fale comigo no WhatsApp">
-        💬
-    </a>
+    <!-- Botão de WhatsApp Flutuante Harmonizado (Grafite com Dourado) -->
+    <div class="whatsapp-float-container">
+        <div class="whatsapp-tooltip">Fale comigo no WhatsApp</div>
+        <a href="https://api.whatsapp.com/send?phone=5511952182049" target="_blank" class="whatsapp-btn" aria-label="Falar no WhatsApp">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+        </a>
+    </div>
 
+    <script>
+        const questions = [
+            {
+                q: "Se você pudesse destravar apenas UMA dessas áreas na sua vida íntima hoje, qual seria?",
+                options: [
+                    { text: "A) Resgatar meu desejo e libido de forma prática no dia a dia.", score: 'A' },
+                    { text: "B) Destravar inseguranças, ansiedade de desempenho e bloqueios na hora H.", score: 'A' },
+                    { text: "C) Melhorar a sintonia, o diálogo e a cumplicidade a dois.", score: 'A' },
+                    { text: "D) Entender questões pontuais sobre meu corpo ou sexualidade.", score: 'A' },
+                    { text: "E) Outras necessidades e buscas íntimas.", score: 'A' }
+                ]
+            },
+            {
+                q: "Quando o assunto é a sua vida íntima atual, qual destas frases melhor descreve o seu momento?",
+                options: [
+                    { text: "A) Sinto uma queda persistente no desejo, na libido ou um distanciamento na relação que está me gerando sofrimento ou frustração.", score: 'A' },
+                    { text: "B) Tenho apenas curiosidade sobre o assunto ou busco dicas rápidas na internet.", score: 'B' }
+                ]
+            },
+            {
+                q: "Você lida com bloqueios, inseguranças profundas ou desconfortos (como falta de lubrificação ou dor) que atrapalham o seu prazer e que você não consegue resolver sozinha(o)?",
+                options: [
+                    { text: "A) Sim, sinto que esses obstáculos travam minha liberdade e preciso de ajuda especializada para superá-los.", score: 'A' },
+                    { text: "B) Não vejo grandes travas, levo a minha intimidade de forma bem casual.", score: 'B' }
+                ]
+            },
+            {
+                q: "Quanto essa situação tem gerado sofrimento, frustração, ansiedade ou até mesmo distanciamento na sua intimidade ou autoestima?",
+                options: [
+                    { text: "A) Muito; isso afeta diretamente o meu bem-estar, a minha confiança e o clima a dois.", score: 'A' },
+                    { text: "B) Quase nada; sinto que é algo passageiro ou sem grande impacto.", score: 'B' }
+                ]
+            },
+            {
+                q: "A Terapia Sexual é um processo clínico particular, estruturado e pago, que exige tempo, sigilo e dedicação mútua. Você está em um momento de vida onde pode priorizar esse investimento no seu bem-estar?",
+                options: [
+                    { text: "A) Sim, compreendo perfeitamente o valor do processo e estou pronta(o) para investir em mim.", score: 'A' },
+                    { text: "B) No momento prefiro apenas consumir conteúdos gratuitos e dicas na internet.", score: 'B' }
+                ]
+            }
+        ];
+
+        let currentStep = 0;
+        let userScores = [];
+
+        function renderStep() {
+            const container = document.getElementById('quiz-step-container');
+            const stepLabel = document.getElementById('quiz-step');
+            const progressBar = document.getElementById('quiz-progress');
+
+            if (!container || !stepLabel || !progressBar) return;
+
+            stepLabel.innerText = `Pergunta ${currentStep + 1} de ${questions.length}`;
+            progressBar.style.width = `${((currentStep + 1) / questions.length) * 100}%`;
+
+            const currentQ = questions[currentStep];
+            let html = `<div class="quiz-question">${currentQ.q}</div><div class="quiz-options">`;
+
+            currentQ.options.forEach((opt, index) => {
+                html += `<button class="quiz-btn" onclick="selectOption('${opt.score}')">${opt.text}</button>`;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        window.selectOption = function(score) {
+            userScores.push(score);
+            currentStep++;
+
+            if (currentStep < questions.length) {
+                renderStep();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const container = document.getElementById('quiz-step-container');
+            const stepLabel = document.getElementById('quiz-step');
+            
+            if (stepLabel) stepLabel.style.display = 'none';
+
+            const isQualified = userScores.every(s => s === 'A');
+
+            if (isQualified) {
+                container.innerHTML = `
+                    <div class="quiz-result">
+                        <h3>Parabéns! Seu perfil está alinhado para o acompanhamento.</h3>
+                        <p>Como você reconhece o valor do processo e está disposta a investir no seu bem-estar, você ganhou o direito a um <b>bate-papo inicial exclusivo de 20 minutos (sem custo)</b> para alinharmos o seu caso.</p>
+                        <p>Preencha seus dados para abrir o WhatsApp diretamente comigo:</p>
+                        
+                        <div class="quiz-form-group">
+                            <label for="user-name">Nome Completo:</label>
+                            <input type="text" id="user-name" placeholder="Digite seu nome">
+                        </div>
+                        <div class="quiz-form-group">
+                            <label for="user-phone">Telefone / WhatsApp (com DDD/DDI):</label>
+                            <input type="tel" id="user-phone" placeholder="+55 (11) 99999-9999">
+                        </div>
+
+                        <button onclick="sendToWhatsapp()" class="quiz-cta-btn">💬 AGENDAR MEU BATE-PAPO DE 20 MINUTOS</button>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="quiz-result">
+                        <h3>Obrigada por participar!</h3>
+                        <p>Obrigada por dedicar alguns minutos para responder à nossa avaliação. Pelas suas respostas, percebemos que neste momento você está em busca de conteúdos informativos, o que nos deixa muito felizes, pois acreditamos que a sexualidade é um caminho contínuo de autoconhecimento.</p>
+                        <p>Você é muito bem-vinda (ou bem-vindo) para acompanhar as nossas reflexões e conteúdos abertos nas redes sociais.</p>
+                        <a href="https://instagram.com" target="_blank" class="quiz-insta-btn">📸 ACOMPANHAR NO INSTAGRAM</a><br>
+                        <a href="#quiz-intimo" onclick="resetQuiz()" class="quiz-back-link">Voltar ao início da avaliação</a>
+                    </div>
+                `;
+            }
+        }
+
+        window.resetQuiz = function() {
+            currentStep = 0;
+            userScores = [];
+            const stepLabel = document.getElementById('quiz-step');
+            if (stepLabel) stepLabel.style.display = 'none';
+            renderStep();
+        }
+
+        window.sendToWhatsapp = function() {
+            const nameInput = document.getElementById('user-name');
+            const phoneInput = document.getElementById('user-phone');
+
+            if (!nameInput || !phoneInput) return;
+
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+
+            if (!name || !phone) {
+                alert("Por favor, preencha seu nome e telefone para prosseguir.");
+                return;
+            }
+
+            const textMsg = `Olá, Andréia Cardoso! Gostaria de marcar um bate-papo de 20 min. gratuito para entender se a terapia sexual poderá me ajudar.\n\nNome: ${name} (Contato: ${phone})`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=5511952182049&text=${encodeURIComponent(textMsg)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            renderStep();
+        });
+    </script>
 </body>
 </html>
