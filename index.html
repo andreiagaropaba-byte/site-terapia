@@ -4,7 +4,504 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andréia Cardoso | Sexologia & Desenvolvimento Íntimo</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-color: #fcfbfa;
+            --card-bg: #f4f1ec;
+            --text-color: #2c2a29;
+            --accent-color: #c5a880;
+            --dark-bg: #1a1918;
+            --border-color: #e3ded6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* BARRA SUPERIOR */
+        .top-bar {
+            background-color: var(--dark-bg);
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* NAVEGAÇÃO */
+        .main-nav {
+            background-color: var(--dark-bg);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .site-logo {
+            height: 55px;
+            width: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #e3ded6;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-primary-nav {
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-primary-nav:hover {
+            opacity: 0.9;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .hero-content .tagline {
+            display: inline-block;
+            color: var(--accent-color);
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(28px, 4vw, 48px);
+            font-weight: 300;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .highlight-text {
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .hero-cta {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .btn-primary {
+            background-color: var(--dark-bg);
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #333;
+        }
+
+        .sub-cta {
+            font-size: 11px;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        /* SEÇÃO DE AVALIAÇÃO */
+        .quiz-section {
+            background-color: var(--card-bg);
+            padding: 80px 5%;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-tag {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #888;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .quiz-container h2 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .quiz-container p {
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .quiz-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: left;
+        }
+
+        .quiz-step {
+            font-size: 11px;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .quiz-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-opt {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 15px 20px;
+            text-align: left;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-opt:hover {
+            border-color: var(--accent-color);
+            background: #fff;
+        }
+
+        /* MANIFESTO */
+        .manifesto-section {
+            padding: 100px 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .manifesto-lead {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .quote-box {
+            font-style: italic;
+            font-size: 20px;
+            color: #555;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
+            margin: 40px auto;
+            max-width: 700px;
+            text-align: left;
+        }
+
+        /* PÚBLICO ALVO */
+        .audience-section {
+            background-color: var(--card-bg);
+            padding: 80px 5%;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .audience-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .audience-container h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .audience-card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .check-icon {
+            color: var(--accent-color);
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .audience-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .audience-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ÁREAS DE FOCO */
+        .services-section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .section-desc {
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .star-icon {
+            color: var(--accent-color);
+            font-size: 18px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* CONSCIENTIZAÇÃO */
+        .awareness-section {
+            background-color: var(--dark-bg);
+            color: #fff;
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .awareness-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .awareness-container .section-tag {
+            color: var(--accent-color);
+        }
+
+        .awareness-quote {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        /* RODAPÉ */
+        .site-footer {
+            background-color: #121110;
+            color: #ccc;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .footer-brand p {
+            font-size: 11px;
+            color: var(--accent-color);
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand small {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .footer-nav h4, .footer-contact h4 {
+            color: #fff;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+        }
+
+        .footer-nav li {
+            margin-bottom: 10px;
+        }
+
+        .footer-nav a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-whatsapp-footer {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-radius: 4px;
+        }
+
+        .footer-disclaimer {
+            max-width: 1200px;
+            margin: 30px auto 0;
+            font-size: 11px;
+            color: #777;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .footer-disclaimer strong {
+            color: #999;
+        }
+
+        @media (min-width: 768px) {
+            .hero-container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .hero-content {
+                max-width: 60%;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -17,7 +514,6 @@
     <nav class="main-nav">
         <div class="nav-container">
             <div class="logo-brand">
-                <!-- Inserção da sua nova logo -->
                 <img src="LOGO.png" alt="Andréia Cardoso - Sexologia e Desenvolvimento Íntimo" class="site-logo">
             </div>
             <ul class="nav-links">
@@ -43,9 +539,6 @@
                     <a href="#avaliacao" class="btn-primary">✦ FAZER AVALIAÇÃO DE PERFIL</a>
                     <span class="sub-cta">ATENDIMENTO INDIVIDUAL E EXCLUSIVO.</span>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="sua-foto.jpg" alt="Andréia Cardoso - Sexóloga">
             </div>
         </div>
     </section>
@@ -180,16 +673,14 @@
 
             <div class="footer-contact">
                 <h4>CONTATO DIRETO</h4>
-                <a href="https://wa.me/SEUNUMERO" target="_blank" class="btn-whatsapp-footer">💬 FALAR NO WHATSAPP</a>
+                <a href="url?id=4" target="_blank" class="btn-whatsapp-footer">💬 FALAR NO WHATSAPP</a>
             </div>
         </div>
 
         <!-- AVISO LEGAL INTERNACIONAL -->
         <div class="footer-disclaimer">
-            <div class="disclaimer-container">
-                <p><strong>Aviso Legal / Disclaimer:</strong> Os serviços prestados por Andréia Cardoso possuem caráter exclusivo de mentoria, educação íntima e desenvolvimento pessoal. O trabalho não constitui psicoterapia, atendimento psicológico, psiquiátrico ou tratamento de saúde mental, não substituindo diagnósticos ou acompanhamentos por profissionais de medicina ou psicologia licenciados em suas respectivas jurisdições.</p>
-                <p>© 2026 Andréia Cardoso. Todos os direitos reservados.</p>
-            </div>
+            <p><strong>Aviso Legal / Disclaimer:</strong> Os serviços prestados por Andréia Cardoso possuem caráter exclusivo de mentoria, educação íntima e desenvolvimento pessoal. O trabalho não constitui psicoterapia, atendimento psicológico, psiquiátrico ou tratamento de saúde mental, não substituindo diagnósticos ou acompanhamentos por profissionais de medicina ou psicologia licenciados em suas respectivas jurisdições.</p>
+            <p style="margin-top: 10px;">© 2026 Andréia Cardoso. Todos os direitos reservados.</p>
         </div>
     </footer>
 
